@@ -18,23 +18,16 @@
         var sheetObj = {};
         for (var j = 0; j < sheetData.length; j++) {
           var rowData = sheetData[j].values;
-          if (rowData) {
+          if (rowData && rowData.length >= 2) {
             var fieldA = rowData[0] ? rowData[0].formattedValue : '';
             var fieldB = rowData[1] ? rowData[1].formattedValue : '';
-            var fieldC = rowData[2] ? rowData[2].formattedValue : '';
 
-            if (fieldA && fieldB && fieldC) {
-              if (fieldA === 'A1') {
-                sheetObj[fieldA] = {
-                  [fieldB]: fieldC
-                };
-              } else {
-                sheetObj[fieldA] = {
-                  [fieldB]: {
-                    [fieldA.toLowerCase()]: fieldC
-                  }
-                };
+            if (fieldA) {
+              if (!fieldB && rowData.length >= 5) {
+                fieldB = rowData[4] ? rowData[4].formattedValue : '';
               }
+
+              sheetObj[fieldA] = fieldB;
             }
           }
         }
