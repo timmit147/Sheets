@@ -4,7 +4,7 @@
   <title>Fetch Google Sheets as JSON</title>
 </head>
 <body>
-  <div id="data-container"></div>
+  <pre id="data-container"></pre>
 
   <script>
     function handleResponse(response) {
@@ -40,27 +40,9 @@
         }
       }
 
-      // Create div elements for each block
+      // Display the JSON data on the page
       var jsonContainer = document.getElementById('data-container');
-      for (var sheet in jsonData) {
-        if (jsonData.hasOwnProperty(sheet)) {
-          var sheetObj = jsonData[sheet];
-          for (var key in sheetObj) {
-            if (sheetObj.hasOwnProperty(key) && key.startsWith('block')) {
-              var blockNumber = key.substring(5);
-              var blockTitle = sheetObj[key][1];
-
-              var blockDiv = document.createElement('div');
-              blockDiv.id = 'block' + blockNumber;
-              jsonContainer.appendChild(blockDiv);
-
-              var titleH1 = document.createElement('h1');
-              titleH1.textContent = blockTitle;
-              blockDiv.appendChild(titleH1);
-            }
-          }
-        }
-      }
+      jsonContainer.innerHTML = JSON.stringify(jsonData, null, 2);
     }
 
     function fetchSheetAsJSON() {
