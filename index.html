@@ -22,13 +22,12 @@
             var fieldA = rowData[0] ? rowData[0].formattedValue : '';
 
             if (fieldA) {
-              var fieldArray = [];
-              for (var k = 1; k < rowData.length; k++) {
-                var fieldVal = rowData[k] ? rowData[k].formattedValue : null;
-                if (fieldVal !== null) {
-                  fieldArray.push(fieldVal);
-                }
-              }
+              var fieldArray = rowData.slice(1).map(function(cell) {
+                return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+              }).filter(function(value) {
+                return value !== undefined;
+              });
+
               if (fieldArray.length > 0) {
                 sheetObj[fieldA] = fieldArray;
               }
