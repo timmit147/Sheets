@@ -1,1 +1,52 @@
-<h1>hallo</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fetch Google Sheets as JSON</title>
+</head>
+<body>
+  <div id="data-container"></div>
+
+  <script>
+    function handleResponse(response) {
+      var data = response.feed.entry;
+      var jsonData = [];
+
+      for (var i = 0; i < data.length; i++) {
+        var entry = data[i];
+        var row = {};
+
+        for (var key in entry) {
+          if (key.startsWith('gsx$')) {
+            var fieldName = key.replace('gsx$', '');
+            row[fieldName] = entry[key].$t;
+          }
+        }
+
+        jsonData.push(row);
+      }
+
+      // Display the JSON data on the page
+      var jsonContainer = document.getElementById('data-container');
+      jsonContainer.textContent = JSON.stringify(jsonData, null, 2);
+    }
+
+    function fetchSheetAsJSON() {
+      var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4/od6/public/values?alt=json';
+
+      fetch(sheetUrl)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          handleResponse(data);
+        })
+        .catch(function(error) {
+          console.log('Error fetching Google Sheets data:', error);
+        });
+    }
+
+    // Fetch the Google Sheets data as JSON on page load
+    fetchSheetAsJSON();
+  </script>
+</body>
+</html>
