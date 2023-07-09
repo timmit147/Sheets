@@ -16,8 +16,6 @@
         var sheetName = sheets[i].properties.title;
 
         var sheetObj = {};
-        var currentA = null;
-        var currentB = null;
         for (var j = 0; j < sheetData.length; j++) {
           var rowData = sheetData[j].values;
           if (rowData && rowData.length >= 3) {
@@ -26,22 +24,26 @@
             var fieldC = rowData[2] ? rowData[2].formattedValue : '';
 
             if (fieldA) {
-              currentA = fieldA;
-              currentB = null;
-              sheetObj[currentA] = {};
-            }
-            if (fieldB) {
-              currentB = fieldB;
-              sheetObj[currentA][currentB] = {};
-            }
-            if (fieldC && currentB) {
-              sheetObj[currentA][currentB] = fieldC;
+              if (!sheetObj[fieldA]) {
+                sheetObj[fieldA] = {};
+              }
+              if (fieldB) {
+                if (!sheetObj[fieldA][fieldB]) {
+                  sheetObj[fieldA][fieldB] = [];
+                }
+                if (fieldC) {
+                  sheetObj[fieldA][fieldB].push(fieldC);
+                }
+              }
             }
           }
         }
 
         if (Object.keys(sheetObj).length > 0) {
-          jsonData[sheetName.toLowerCase()] = sheetObj;
+          if (!jsonData[sheetName.toLowerCase()]) {
+            jsonData[sheetName.toLowerCase()] = {};
+          }
+          jsonData[sheetName.toLowerCase()] = mergeObjects(jsonData[sheetName.toLowerCase()], sheetObj);
         }
       }
 
@@ -71,6 +73,21 @@
           var errorContainer = document.getElementById('data-container');
           errorContainer.textContent = errorMessage;
         });
+    }
+
+    function mergeObjects(obj1, obj2) {
+      for (var key in obj2) {
+        if (obj2.hasOwnProperty(key)) {
+          if (obj1[key]) {
+            obj1[key] = Array.isArray(obj1[key])
+              ? obj1[key].concat(obj2[key])
+              : [obj1[key], obj2[key]];
+          } else {
+            obj1[key] = obj2[key];
+          }
+        }
+      }
+      return obj1;
     }
 
     // Fetch the Google Sheets data as JSON for all sheets on page load
