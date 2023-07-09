@@ -18,18 +18,18 @@
         var sheetObj = {};
         for (var j = 0; j < sheetData.length; j++) {
           var rowData = sheetData[j].values;
-          if (rowData && rowData.length > 1) {
+          if (rowData && rowData.length >= 2) {
             var fieldA = rowData[0] ? rowData[0].formattedValue : '';
+
             if (fieldA) {
+              if (!sheetObj[fieldA]) {
+                sheetObj[fieldA] = {};
+              }
+
               for (var k = 1; k < rowData.length; k++) {
+                var fieldKey = String.fromCharCode(65 + k); // ASCII 'A' + column index
                 var fieldVal = rowData[k] ? rowData[k].formattedValue : '';
-                if (fieldVal) {
-                  var fieldKey = String.fromCharCode(65 + k - 1); // ASCII 'A' + column index
-                  if (!sheetObj[fieldA]) {
-                    sheetObj[fieldA] = {};
-                  }
-                  sheetObj[fieldA][fieldKey] = fieldVal;
-                }
+                sheetObj[fieldA][fieldKey] = fieldVal;
               }
             }
           }
