@@ -15,13 +15,22 @@
         var sheetData = sheets[i].data[0].rowData;
         var sheetName = sheets[i].properties.title;
 
-        var sheetObj = {};
+        var sheetObj = [];
         for (var j = 0; j < sheetData.length; j++) {
           var rowData = sheetData[j].values;
           if (rowData) {
-            var fieldName = rowData[0].formattedValue;
-            var value = rowData[2] ? rowData[2].formattedValue : '';
-            sheetObj[fieldName] = value;
+            var rowObj = {};
+            for (var k = 0; k < rowData.length; k++) {
+              var fieldName = rowData[k].formattedValue;
+              var cellValue = rowData[k + 1] ? rowData[k + 1].formattedValue : '';
+              if (fieldName) {
+                var cellObj = {};
+                cellObj[fieldName] = cellValue;
+                rowObj = Object.assign(rowObj, cellObj);
+              }
+              k++;
+            }
+            sheetObj.push(rowObj);
           }
         }
 
