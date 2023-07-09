@@ -8,6 +8,7 @@
 
   <script>
     function handleResponse(response) {
+  vafunction handleResponse(response) {
   var jsonData = {};
 
   var sheets = response.sheets;
@@ -40,8 +41,11 @@
     }
   }
 
-  // Create div elements for each block
+  // Create div elements for each block and display JSON data
   var jsonContainer = document.getElementById('data-container');
+  var jsonOutput = JSON.stringify(jsonData, null, 2);
+  jsonContainer.textContent = jsonOutput;
+
   for (var sheet in jsonData) {
     if (jsonData.hasOwnProperty(sheet)) {
       var sheetObj = jsonData[sheet];
@@ -62,6 +66,7 @@
     }
   }
 }
+
 
 
     function fetchSheetAsJSON() {
