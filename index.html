@@ -28,9 +28,7 @@
       jsonContainer.textContent = JSON.stringify(jsonData, null, 2);
     }
 
-    function fetchSheetAsJSON() {
-      var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
-      var sheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
+    function fetchSheetAsJSON(sheetId, apiKey) {
       var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?alt=json&key=${apiKey}`;
 
       fetch(sheetUrl)
@@ -50,8 +48,38 @@
         });
     }
 
-    // Fetch the Google Sheets data as JSON on page load
-    fetchSheetAsJSON();
+    // Fetch the Google Sheets data as JSON for each sheet
+    function fetchAllSheets() {
+      var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
+      var spreadsheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
+
+      var sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?fields=sheets.properties.title&key=${apiKey}`;
+
+      fetch(sheetsUrl)
+        .then(function(response) {
+          if (!response.ok) {
+            throw new Error('Failed to fetch Google Sheets data');
+          }
+          return response.json();
+        })
+        .then(function(data) {
+          var sheets = data.sheets;
+          for (var i = 0; i < sheets.length; i++) {
+            var sheet = sheets[i];
+            var sheetTitle = sheet.properties.title;
+            var sheetId = sheet.properties.sheetId;
+            fetchSheetAsJSON(sheetId, apiKey);
+          }
+        })
+        .catch(function(error) {
+          var errorMessage = 'Error fetching Google Sheets data: ' + error.message;
+          var errorContainer = document.getElementById('data-container');
+          errorContainer.textContent = errorMessage;
+        });
+    }
+
+    // Fetch data from all sheets in the Google Sheets file as JSON on page load
+    fetchAllSheets();
   </script>
 </body>
 </html>
