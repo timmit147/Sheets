@@ -8,42 +8,61 @@
 
   <script>
     function handleResponse(response) {
-      var jsonData = {};
+  var jsonData = {};
 
-      var sheets = response.sheets;
-      for (var i = 0; i < sheets.length; i++) {
-        var sheetData = sheets[i].data[0].rowData;
-        var sheetName = sheets[i].properties.title;
+  var sheets = response.sheets;
+  for (var i = 0; i < sheets.length; i++) {
+    var sheetData = sheets[i].data[0].rowData;
+    var sheetName = sheets[i].properties.title;
 
-        var sheetObj = {};
-        for (var j = 0; j < sheetData.length; j++) {
-          var rowData = sheetData[j].values;
-          if (rowData && rowData.length > 1) {
-            var fieldA = rowData[0] ? rowData[0].formattedValue : '';
+    var sheetObj = {};
+    for (var j = 0; j < sheetData.length; j++) {
+      var rowData = sheetData[j].values;
+      if (rowData && rowData.length > 1) {
+        var fieldA = rowData[0] ? rowData[0].formattedValue : '';
 
-            if (fieldA) {
-              var fieldArray = rowData.slice(1).map(function(cell) {
-                return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-              }).filter(function(value) {
-                return value !== undefined;
-              });
+        if (fieldA) {
+          var fieldArray = rowData.slice(1).map(function (cell) {
+            return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+          }).filter(function (value) {
+            return value !== undefined;
+          });
 
-              if (fieldArray.length > 0) {
-                sheetObj[fieldA] = fieldArray;
-              }
-            }
+          if (fieldArray.length > 0) {
+            sheetObj[fieldA] = fieldArray;
           }
         }
+      }
+    }
 
-        if (Object.keys(sheetObj).length > 0) {
-          jsonData[sheetName] = sheetObj;
+    if (Object.keys(sheetObj).length > 0) {
+      jsonData[sheetName] = sheetObj;
+    }
+  }
+
+  // Create div elements for each block
+  var jsonContainer = document.getElementById('data-container');
+  for (var sheet in jsonData) {
+    if (jsonData.hasOwnProperty(sheet)) {
+      var sheetObj = jsonData[sheet];
+      for (var key in sheetObj) {
+        if (sheetObj.hasOwnProperty(key) && key.startsWith('block')) {
+          var blockNumber = key.substring(5);
+          var blockTitle = sheetObj[key][1];
+
+          var blockDiv = document.createElement('div');
+          blockDiv.id = 'block' + blockNumber;
+          jsonContainer.appendChild(blockDiv);
+
+          var titleH1 = document.createElement('h1');
+          titleH1.textContent = blockTitle;
+          blockDiv.appendChild(titleH1);
         }
       }
-
-      // Display the JSON data on the page
-      var jsonContainer = document.getElementById('data-container');
-      jsonContainer.textContent = JSON.stringify(jsonData, null, 2);
     }
+  }
+}
+
 
     function fetchSheetAsJSON() {
       var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
