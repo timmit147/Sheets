@@ -1,0 +1,18 @@
+body{
+    margin: 0px;
+}
+
+.contentBlock{
+    background-color: red;
+    padding: 20px;
+}
+
+.imageBlock{
+    background-color: blue;
+    padding: 40px;
+}
+
+.headerBlock{
+    background-color: green;
+    padding: 60px;
+}
