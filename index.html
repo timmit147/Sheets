@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fetch Google Sheets and Create Divs</title>
+  <title>Fetch Google Sheets as JSON</title>
 </head>
 <body>
   <div id="data-container"></div>
 
   <script>
     function handleResponse(response) {
-      var jsonData = response.values;
+      var jsonData = {};
 
-      // Create divs for each value in the sheet that starts with "block"
-      for (var i = 0; i < jsonData.length; i++) {
-        var value = jsonData[i][0]; // Assuming the values are in the first column (column A)
-        if (value && value.startsWith("block")) {
-          var blockNumber = value.substring(5); // Extract the number from the value (assuming the format "block1", "block2", etc.)
+      var sheets = response.sheets;
+      for (var i = 0; i < sheets.length; i++) {
+        var sheetData = sheets[i].data[0].rowData;
+        var sheetName = sheets[i].properties.title;
 
-          // Create a new div element
-          var div = document.createElement("div");
-          div.id = "block" + blockNumber;
-          document.body.appendChild(div);
+        var sheetObj = {};
+        for (var j = 0; j < sheetData.length; j++) {
+          var rowData = sheetData[j].values;
+          if (rowData && rowData.length > 1) {
+            var fieldA = rowData[0] ? rowData[0].formattedValue : '';
 
-          // Place the value from column C (assuming the third column) inside the div using an h1 element
-          var thirdValue = jsonData[i][2]; // Assuming the third value is in the third column (column C)
-          if (thirdValue) {
-            var h1 = document.createElement("h1");
-            h1.textContent = thirdValue;
-            div.appendChild(h1);
+            if (fieldA) {
+              var fieldArray = rowData.slice(1).map(function(cell) {
+                return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+              }).filter(function(value) {
+                return value !== undefined;
+              });
+
+              if (fieldArray.length > 0) {
+                sheetObj[fieldA] = fieldArray;
+              }
+            }
           }
         }
+
+        if (Object.keys(sheetObj).length > 0) {
+          jsonData[sheetName] = sheetObj;
+        }
       }
+
+      // Display the JSON data on the page
+      var jsonContainer = document.getElementById('data-container');
+      jsonContainer.textContent = JSON.stringify(jsonData, null, 2);
     }
 
-    function fetchSheetData() {
+    function fetchSheetAsJSON() {
       var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
-      var sheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
-      var sheetRange = 'Sheet1!A:C'; // Assuming the data is in columns A, B, and C of Sheet1
+      var spreadsheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
 
-      var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${sheetRange}?key=${apiKey}`;
+      var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
 
       fetch(sheetUrl)
         .then(function(response) {
@@ -56,8 +68,8 @@
         });
     }
 
-    // Fetch the Google Sheets data and create divs on page load
-    fetchSheetData();
+    // Fetch the Google Sheets data as JSON for all sheets on page load
+    fetchSheetAsJSON();
   </script>
 </body>
 </html>
