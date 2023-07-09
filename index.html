@@ -39,7 +39,7 @@
     function fetchSheetAsJSON() {
       var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
       var sheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
-      var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?alt=json&key=${apiKey}`;
+      var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/page-1?alt=json&key=${apiKey}`;
 
       fetch(sheetUrl)
         .then(function(response) {
