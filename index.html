@@ -8,70 +8,64 @@
 
   <script>
     function handleResponse(response) {
-  vafunction handleResponse(response) {
-  var jsonData = {};
+      var jsonData = {};
 
-  var sheets = response.sheets;
-  for (var i = 0; i < sheets.length; i++) {
-    var sheetData = sheets[i].data[0].rowData;
-    var sheetName = sheets[i].properties.title;
+      var sheets = response.sheets;
+      for (var i = 0; i < sheets.length; i++) {
+        var sheetData = sheets[i].data[0].rowData;
+        var sheetName = sheets[i].properties.title;
 
-    var sheetObj = {};
-    for (var j = 0; j < sheetData.length; j++) {
-      var rowData = sheetData[j].values;
-      if (rowData && rowData.length > 1) {
-        var fieldA = rowData[0] ? rowData[0].formattedValue : '';
+        var sheetObj = {};
+        for (var j = 0; j < sheetData.length; j++) {
+          var rowData = sheetData[j].values;
+          if (rowData && rowData.length > 1) {
+            var fieldA = rowData[0] ? rowData[0].formattedValue : '';
 
-        if (fieldA) {
-          var fieldArray = rowData.slice(1).map(function (cell) {
-            return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-          }).filter(function (value) {
-            return value !== undefined;
-          });
+            if (fieldA) {
+              var fieldArray = rowData.slice(1).map(function(cell) {
+                return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+              }).filter(function(value) {
+                return value !== undefined;
+              });
 
-          if (fieldArray.length > 0) {
-            sheetObj[fieldA] = fieldArray;
+              if (fieldArray.length > 0) {
+                sheetObj[fieldA] = fieldArray;
+              }
+            }
+          }
+        }
+
+        if (Object.keys(sheetObj).length > 0) {
+          jsonData[sheetName] = sheetObj;
+        }
+      }
+
+      // Create div elements for each block
+      var jsonContainer = document.getElementById('data-container');
+      for (var sheet in jsonData) {
+        if (jsonData.hasOwnProperty(sheet)) {
+          var sheetObj = jsonData[sheet];
+          for (var key in sheetObj) {
+            if (sheetObj.hasOwnProperty(key) && key.startsWith('block')) {
+              var blockNumber = key.substring(5);
+              var blockTitle = sheetObj[key][1];
+
+              var blockDiv = document.createElement('div');
+              blockDiv.id = 'block' + blockNumber;
+              jsonContainer.appendChild(blockDiv);
+
+              var titleH1 = document.createElement('h1');
+              titleH1.textContent = blockTitle;
+              blockDiv.appendChild(titleH1);
+            }
           }
         }
       }
     }
 
-    if (Object.keys(sheetObj).length > 0) {
-      jsonData[sheetName] = sheetObj;
-    }
-  }
-
-  // Create div elements for each block and display JSON data
-  var jsonContainer = document.getElementById('data-container');
-  var jsonOutput = JSON.stringify(jsonData, null, 2);
-  jsonContainer.textContent = jsonOutput;
-
-  for (var sheet in jsonData) {
-    if (jsonData.hasOwnProperty(sheet)) {
-      var sheetObj = jsonData[sheet];
-      for (var key in sheetObj) {
-        if (sheetObj.hasOwnProperty(key) && key.startsWith('block')) {
-          var blockNumber = key.substring(5);
-          var blockTitle = sheetObj[key][1];
-
-          var blockDiv = document.createElement('div');
-          blockDiv.id = 'block' + blockNumber;
-          jsonContainer.appendChild(blockDiv);
-
-          var titleH1 = document.createElement('h1');
-          titleH1.textContent = blockTitle;
-          blockDiv.appendChild(titleH1);
-        }
-      }
-    }
-  }
-}
-
-
-
     function fetchSheetAsJSON() {
-      var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
-      var spreadsheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
+      var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0'; // Replace with your API key
+      var spreadsheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4'; // Replace with your spreadsheet ID
 
       var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
 
