@@ -5,22 +5,19 @@
 </head>
 <body>
   <div id="data-container"></div>
-  <div id="error-message"></div>
 
   <script>
     function handleResponse(response) {
-      var data = response.feed.entry;
+      var data = response.values;
       var jsonData = [];
 
-      for (var i = 0; i < data.length; i++) {
-        var entry = data[i];
+      for (var i = 1; i < data.length; i++) { // Start from index 1 to skip the header row
         var row = {};
+        var rowData = data[i];
 
-        for (var key in entry) {
-          if (key.startsWith('gsx$')) {
-            var fieldName = key.replace('gsx$', '');
-            row[fieldName] = entry[key].$t;
-          }
+        for (var j = 0; j < rowData.length; j++) {
+          var fieldName = data[0][j];
+          row[fieldName] = rowData[j];
         }
 
         jsonData.push(row);
@@ -31,15 +28,10 @@
       jsonContainer.textContent = JSON.stringify(jsonData, null, 2);
     }
 
-    function displayError(error) {
-      var errorMessage = document.getElementById('error-message');
-      errorMessage.textContent = 'Error fetching Google Sheets data: ' + error;
-    }
-
     function fetchSheetAsJSON() {
       var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
       var sheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
-      var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/page-1?alt=json&key=${apiKey}`;
+      var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1?alt=json&key=${apiKey}`;
 
       fetch(sheetUrl)
         .then(function(response) {
@@ -52,7 +44,9 @@
           handleResponse(data);
         })
         .catch(function(error) {
-          displayError(error);
+          var errorMessage = 'Error fetching Google Sheets data: ' + error.message;
+          var errorContainer = document.getElementById('data-container');
+          errorContainer.textContent = errorMessage;
         });
     }
 
