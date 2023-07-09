@@ -5,6 +5,7 @@
 </head>
 <body>
   <div id="data-container"></div>
+  <div id="error-message"></div>
 
   <script>
     function handleResponse(response) {
@@ -30,6 +31,11 @@
       jsonContainer.textContent = JSON.stringify(jsonData, null, 2);
     }
 
+    function displayError(error) {
+      var errorMessage = document.getElementById('error-message');
+      errorMessage.textContent = 'Error fetching Google Sheets data: ' + error;
+    }
+
     function fetchSheetAsJSON() {
       var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
       var sheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
@@ -37,13 +43,16 @@
 
       fetch(sheetUrl)
         .then(function(response) {
+          if (!response.ok) {
+            throw new Error('Failed to fetch Google Sheets data');
+          }
           return response.json();
         })
         .then(function(data) {
           handleResponse(data);
         })
         .catch(function(error) {
-          console.log('Error fetching Google Sheets data:', error);
+          displayError(error);
         });
     }
 
