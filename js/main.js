@@ -8,6 +8,7 @@ function jsonCleanup(response) {
 
       var sheetObj = {};
       for (var j = 0; j < sheetData.length; j++) {
+        
         var rowData = sheetData[j].values;
         if (rowData && rowData.length > 1) {
           var fieldA = rowData[0] ? rowData[0].formattedValue : '';
@@ -32,9 +33,9 @@ function jsonCleanup(response) {
     }
 
     createDivsFromBlocks(jsonData);
-  }
+}
 
-  function fetchSheetAsJSON() {
+function fetchSheetAsJSON() {
     var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0'; // Replace with your API key
     var spreadsheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4'; // Replace with your spreadsheet ID
 
@@ -55,38 +56,35 @@ function jsonCleanup(response) {
         var errorContainer = document.getElementById('data-container');
         errorContainer.textContent = errorMessage;
       });
-  }
+}
 
-  
-  // Fetch the Google Sheets data as JSON for all sheets on page load
-  fetchSheetAsJSON();
-
-
-
-
-  function createDivsFromBlocks(jsonData) {
+function createDivsFromBlocks(jsonData) {
     console.log(jsonData);
     const hoofdpagina = jsonData.Hoofdpagina;
   
-    // Iterate over the properties of the Hoofdpagina
+    // // Iterate over the properties of the Hoofdpagina
     for (const key in hoofdpagina) {
       if (key.startsWith('block')) {
-        const block = hoofdpagina[key];
-        const blockClass = block[0];
-  
-        // Create a div element for each block
-        const div = document.createElement('div');
-        div.className = blockClass;
-  
-        // Use the first value of the block array
-        const span = document.createElement('span');
-        span.textContent = block[1];
-        div.appendChild(span);
-  
-        // Append the div to the document body
-        document.body.appendChild(div);
-      }
+        // console.log(key);
+      
+       // Create an object element
+        const objectElement = document.createElement('object');
+        objectElement.data = `./blocks/${key}/block.html`;
+        objectElement.onload = () => {
+          // Append the object element to the target element
+          const targetElement = document.getElementById('targetElement');
+          targetElement.appendChild(objectElement.contentDocument.documentElement);
+        };
+
+        // Append the object element to the document
+        document.body.appendChild(objectElement);
+
+        document.head.innerHTML += `<link rel="stylesheet" href="./blocks/${key}/style.css">`;
+
     }
   }
+}
+
+fetchSheetAsJSON();
   
  
