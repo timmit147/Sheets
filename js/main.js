@@ -73,7 +73,6 @@ function createDivsFromBlocks(jsonData) {
         objectElement.onload = () => {
           // Append the object element to the target element
           const targetElement = document.getElementById('targetElement');
-          targetElement.appendChild(objectElement.contentDocument.documentElement);
         };
 
         // Append the object element to the document
