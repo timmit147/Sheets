@@ -65,20 +65,22 @@ function createDivsFromBlocks(jsonData) {
     // // Iterate over the properties of the Hoofdpagina
     for (const key in hoofdpagina) {
       if (key.startsWith('block')) {
-        // console.log(key);
       
-       // Create an object element
-        const objectElement = document.createElement('object');
-        objectElement.data = `./blocks/${key}/block.html`;
-        objectElement.onload = () => {
-          // Append the object element to the target element
-          const targetElement = document.getElementById('targetElement');
-        };
+// Fetch the content of the block.html file
+fetch(`./blocks/${key}/block.html`)
+  .then(response => response.text())
+  .then(htmlContent => {
+    // Append the HTML content to the body
+    document.body.insertAdjacentHTML('beforeend', htmlContent);
+  })
+  .catch(error => {
+    console.error('Error fetching block.html:', error);
+  });
 
-        // Append the object element to the document
-        document.body.appendChild(objectElement);
 
-        document.head.innerHTML += `<link rel="stylesheet" href="./blocks/${key}/style.css">`;
+
+
+        document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
 
     }
   }
