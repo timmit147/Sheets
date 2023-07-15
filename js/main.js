@@ -14,18 +14,28 @@ function jsonCleanup(response) {
           var fieldA = rowData[0] ? rowData[0].formattedValue : '';
 
           if (fieldA) {
+            var propertyName = fieldA;
+            var count = 1;
+          
+            while (sheetObj.hasOwnProperty(propertyName)) {
+              propertyName = fieldA + count;
+              count++;
+            }
+          
             var fieldArray = rowData.slice(1).map(function(cell) {
               return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
             }).filter(function(value) {
               return value !== undefined;
             });
-
+          
             if (fieldArray.length > 0) {
-              sheetObj[fieldA] = fieldArray;
+              sheetObj[propertyName] = fieldArray;
             }
           }
+          
         }
       }
+
 
       if (Object.keys(sheetObj).length > 0) {
         jsonData[sheetName] = sheetObj;
@@ -66,23 +76,28 @@ function createDivsFromBlocks(jsonData) {
     for (const key in hoofdpagina) {
       if (key.startsWith('block')) {
       
-// Fetch the content of the block.html file
-fetch(`./blocks/${key}/block.html`)
-  .then(response => response.text())
-  .then(htmlContent => {
-    // Append the HTML content to the body
-    document.body.insertAdjacentHTML('beforeend', htmlContent);
-  })
-  .catch(error => {
-    console.error('Error fetching block.html:', error);
-  });
-        document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
-        let json = hoofdpagina[key];
-        const script = document.createElement('script');
-        script.src = `blocks/${key}/script.js`;
-        script.setAttribute('data-json', JSON.stringify(json));
-        document.head.appendChild(script);
+        const modifiedKey = key.replace(/\d+/g, '');
+
+        fetch(`./blocks/${modifiedKey}/block.html`)
+        .then(response => response.text())
+        .then(htmlContent => {
+          document.body.insertAdjacentHTML('beforeend', htmlContent);
+        })
+        .catch(error => {
+          console.error('Error fetching block.html:', error);
+        });
+      
+        if (!/\d/.test(key)) {
+          document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
         
+          const json = hoofdpagina[key];
+          const script = document.createElement('script');
+          script.src = `blocks/${key}/script.js`;
+          script.setAttribute('data-json', JSON.stringify(json));
+          document.head.appendChild(script);
+        }
+        
+      
     }
   }
 }
