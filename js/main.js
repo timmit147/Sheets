@@ -77,9 +77,13 @@ fetch(`./blocks/${key}/block.html`)
     console.error('Error fetching block.html:', error);
   });
         document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
+        let json = hoofdpagina[key];
+        // console.log(json);
         const script = document.createElement('script');
         script.src = `blocks/${key}/script.js`;
+        script.setAttribute('data-json', JSON.stringify(json));
         document.head.appendChild(script);
+        
     }
   }
 }
