@@ -78,7 +78,6 @@ fetch(`./blocks/${key}/block.html`)
   });
         document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
         let json = hoofdpagina[key];
-        // console.log(json);
         const script = document.createElement('script');
         script.src = `blocks/${key}/script.js`;
         script.setAttribute('data-json', JSON.stringify(json));
