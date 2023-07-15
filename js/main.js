@@ -76,16 +76,13 @@ fetch(`./blocks/${key}/block.html`)
   .catch(error => {
     console.error('Error fetching block.html:', error);
   });
-
-
-
-
         document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
-
+        const script = document.createElement('script');
+        script.src = `blocks/${key}/script.js`;
+        document.head.appendChild(script);
     }
   }
 }
 
 fetchSheetAsJSON();
   
- 
