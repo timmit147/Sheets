@@ -1,49 +1,52 @@
 function jsonCleanup(response) {
-    var jsonData = {};
+  var jsonData = {};
 
-    var sheets = response.sheets;
-    for (var i = 0; i < sheets.length; i++) {
-      var sheetData = sheets[i].data[0].rowData;
-      var sheetName = sheets[i].properties.title;
+  var sheets = response.sheets;
+  for (var i = 0; i < sheets.length; i++) {
+    var sheetData = sheets[i].data[0].rowData;
+    var sheetName = sheets[i].properties.title;
 
-      var sheetObj = {};
-      for (var j = 0; j < sheetData.length; j++) {
-        
-        var rowData = sheetData[j].values;
-        if (rowData && rowData.length > 1) {
-          var fieldA = rowData[0] ? rowData[0].formattedValue : '';
+    var sheetObj = {};
+    var sheetArr = []; // Array to maintain the order of properties
 
-          if (fieldA) {
-            var propertyName = fieldA;
-            var count = 1;
-          
-            while (sheetObj.hasOwnProperty(propertyName)) {
-              propertyName = fieldA + count;
-              count++;
-            }
-          
-            var fieldArray = rowData.slice(1).map(function(cell) {
-              return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-            }).filter(function(value) {
-              return value !== undefined;
-            });
-          
-            if (fieldArray.length > 0) {
-              sheetObj[propertyName] = fieldArray;
-            }
+    for (var j = 0; j < sheetData.length; j++) {
+      var rowData = sheetData[j].values;
+      if (rowData && rowData.length > 1) {
+        var fieldA = rowData[0] ? rowData[0].formattedValue : '';
+
+        if (fieldA) {
+          var propertyName = fieldA;
+          var count = 1;
+
+          while (sheetObj.hasOwnProperty(propertyName)) {
+            propertyName = fieldA + count;
+            count++;
           }
-          
+
+          var fieldArray = rowData.slice(1).map(function (cell) {
+            return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+          }).filter(function (value) {
+            return value !== undefined;
+          });
+
+          if (fieldArray.length > 0) {
+            sheetObj[propertyName] = fieldArray;
+            sheetArr.push(propertyName); // Add property name to the array
+          }
         }
-      }
-
-
-      if (Object.keys(sheetObj).length > 0) {
-        jsonData[sheetName] = sheetObj;
       }
     }
 
-    createDivsFromBlocks(jsonData);
+    if (sheetArr.length > 0) {
+      jsonData[sheetName] = { properties: sheetArr, data: sheetObj };
+    }
+  }
+
+  createDivsFromBlocks(jsonData);
+  console.log(jsonData);
 }
+
+
 
 function fetchSheetAsJSON() {
     var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0'; // Replace with your API key
@@ -68,59 +71,58 @@ function fetchSheetAsJSON() {
       });
 }
 
-function createDivsFromBlocks(jsonData) {
-    console.log(jsonData);
-    const hoofdpagina = jsonData.Hoofdpagina;
-  
-    // // Iterate over the properties of the Hoofdpagina
-    for (const key in hoofdpagina) {
-      if (key.startsWith('block')) {
-      
-        const modifiedKey = key.replace(/\d+/g, '');
+async function createDivsFromBlocks(jsonData) {
+  const hoofdpagina = jsonData.Hoofdpagina;
+  const sheetArr = hoofdpagina.properties;
 
-        fetch(`./blocks/${modifiedKey}/block.html`)
-        .then(response => response.text())
-        .then(htmlContent => {
-          document.body.insertAdjacentHTML('beforeend', htmlContent);
-        })
-        .catch(error => {
-          console.error('Error fetching block.html:', error);
-        });
-      
-        if (!/\d/.test(key)) {
-          document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
-        }
+  for (const propertyName of sheetArr) {
+    if (propertyName.startsWith('block')) {
+      const modifiedPropertyName = propertyName.replace(/\d+/g, '');
 
-        function runScriptFromFile(fileUrl) {
-          const data = hoofdpagina[key];
-          data.unshift(key);
+      try {
+        const response = await fetch(`./blocks/${modifiedPropertyName}/block.html`);
+        const htmlContent = await response.text();
+        document.body.insertAdjacentHTML('beforeend', htmlContent);
+      } catch (error) {
+        console.error('Error fetching block.html:', error);
+      }
 
-          return fetch(fileUrl)
-            .then(response => response.text())
-            .then(scriptCode => {
-              // Execute the script code
-              eval(scriptCode); // or use new Function(scriptCode)();
-              if (typeof main === 'function') {
-                return main();
-              } else {
-                return null; // Modify or remove this line as needed
-              }
-            })
-            .catch(error => {
-              console.error('Error fetching and executing script:', error);
-            });
-        }
-        
-        // Usage example:
-        const fileUrl = `blocks/${modifiedKey}/script.js`;
-        runScriptFromFile(fileUrl)
-          .then(result => {
+      if (!/\d/.test(propertyName)) {
+        document.head.innerHTML += `<link rel="stylesheet" href="blocks/${modifiedPropertyName}/style.css">`;
+      }
+
+      function runScriptFromFile(fileUrl) {
+        const data = hoofdpagina.data[propertyName];
+        data.unshift(propertyName);
+
+        return fetch(fileUrl)
+          .then(response => response.text())
+          .then(scriptCode => {
+            // Execute the script code
+            eval(scriptCode); // or use new Function(scriptCode)();
+            if (typeof main === 'function') {
+              return main();
+            } else {
+              return null; // Modify or remove this line as needed
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching and executing script:', error);
           });
-        
-      
+      }
+
+      const fileUrl = `blocks/${modifiedPropertyName}/script.js`;
+      try {
+        await runScriptFromFile(fileUrl);
+      } catch (error) {
+        console.error('Error fetching and executing script:', error);
+      }
     }
   }
 }
+
+
+
 
 fetchSheetAsJSON();
   
