@@ -89,13 +89,33 @@ function createDivsFromBlocks(jsonData) {
       
         if (!/\d/.test(key)) {
           document.head.innerHTML += `<link rel="stylesheet" href="blocks/${key}/style.css">`;
-        
-          const json = hoofdpagina[key];
-          const script = document.createElement('script');
-          script.src = `blocks/${key}/script.js`;
-          script.setAttribute('data-json', JSON.stringify(json));
-          document.head.appendChild(script);
         }
+
+        function runScriptFromFile(fileUrl) {
+          const data = hoofdpagina[key];
+          data.unshift(key);
+
+          return fetch(fileUrl)
+            .then(response => response.text())
+            .then(scriptCode => {
+              // Execute the script code
+              eval(scriptCode); // or use new Function(scriptCode)();
+              if (typeof main === 'function') {
+                return main();
+              } else {
+                return null; // Modify or remove this line as needed
+              }
+            })
+            .catch(error => {
+              console.error('Error fetching and executing script:', error);
+            });
+        }
+        
+        // Usage example:
+        const fileUrl = `blocks/${modifiedKey}/script.js`;
+        runScriptFromFile(fileUrl)
+          .then(result => {
+          });
         
       
     }
