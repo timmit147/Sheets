@@ -46,8 +46,6 @@ function jsonCleanup(response) {
   console.log(jsonData);
 }
 
-
-
 function fetchSheetAsJSON() {
     var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0'; // Replace with your API key
     var spreadsheetId = '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4'; // Replace with your spreadsheet ID
@@ -80,40 +78,13 @@ async function createDivsFromBlocks(jsonData) {
       const modifiedPropertyName = propertyName.replace(/\d+/g, '');
 
       try {
-        const response = await fetch(`./blocks/${modifiedPropertyName}/block.html`);
-        const htmlContent = await response.text();
-        document.body.insertAdjacentHTML('beforeend', htmlContent);
+        await fetchBlockHtml(modifiedPropertyName);
       } catch (error) {
         console.error('Error fetching block.html:', error);
       }
 
-      if (!/\d/.test(propertyName)) {
-        document.head.innerHTML += `<link rel="stylesheet" href="blocks/${modifiedPropertyName}/style.css">`;
-      }
-
-      function runScriptFromFile(fileUrl) {
-        const data = hoofdpagina.data[propertyName];
-        data.unshift(propertyName);
-
-        return fetch(fileUrl)
-          .then(response => response.text())
-          .then(scriptCode => {
-            // Execute the script code
-            eval(scriptCode); // or use new Function(scriptCode)();
-            if (typeof main === 'function') {
-              return main();
-            } else {
-              return null; // Modify or remove this line as needed
-            }
-          })
-          .catch(error => {
-            console.error('Error fetching and executing script:', error);
-          });
-      }
-
-      const fileUrl = `blocks/${modifiedPropertyName}/script.js`;
       try {
-        await runScriptFromFile(fileUrl);
+        await fetchAndExecuteScript(modifiedPropertyName, propertyName, hoofdpagina);
       } catch (error) {
         console.error('Error fetching and executing script:', error);
       }
@@ -121,7 +92,44 @@ async function createDivsFromBlocks(jsonData) {
   }
 }
 
+async function fetchBlockHtml(modifiedPropertyName) {
+  const response = await fetch(`./blocks/${modifiedPropertyName}/block.html`);
+  const htmlContent = await response.text();
+  document.body.insertAdjacentHTML('beforeend', htmlContent);
+}
 
+async function fetchAndExecuteScript(modifiedPropertyName, propertyName, hoofdpagina) {
+  if (!/\d/.test(propertyName)) {
+    document.head.innerHTML += `<link rel="stylesheet" href="blocks/${modifiedPropertyName}/style.css">`;
+  }
+
+  const fileUrl = `blocks/${modifiedPropertyName}/script.js`;
+  try {
+    await runScriptFromFile(fileUrl, propertyName, hoofdpagina);
+  } catch (error) {
+    console.error('Error fetching and executing script:', error);
+  }
+}
+
+function runScriptFromFile(fileUrl, propertyName, hoofdpagina) {
+  const data = hoofdpagina.data[propertyName];
+  data.unshift(propertyName);
+
+  return fetch(fileUrl)
+    .then(response => response.text())
+    .then(scriptCode => {
+      // Execute the script code
+      eval(scriptCode); // or use new Function(scriptCode)();
+      if (typeof main === 'function') {
+        return main();
+      } else {
+        return null; // Modify or remove this line as needed
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching and executing script:', error);
+    });
+}
 
 
 fetchSheetAsJSON();
