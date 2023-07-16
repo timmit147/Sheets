@@ -100,16 +100,30 @@ async function fetchBlockHtml(modifiedPropertyName) {
 
 async function fetchAndExecuteScript(modifiedPropertyName, propertyName, hoofdpagina) {
   if (!/\d/.test(propertyName)) {
-    document.head.innerHTML += `<link rel="stylesheet" href="blocks/${modifiedPropertyName}/style.css">`;
+    const cssUrl = `blocks/${modifiedPropertyName}/style.css`;
+    const linkElement = document.createElement('link');
+    linkElement.rel = 'stylesheet';
+    linkElement.href = cssUrl;
+
+    // Create a promise that resolves when the CSS is loaded
+    const cssLoadedPromise = new Promise((resolve) => {
+      linkElement.onload = resolve;
+    });
+
+    document.head.appendChild(linkElement);
+
+    // Wait for the CSS to load before executing the script
+    await cssLoadedPromise;
   }
 
-  const fileUrl = `blocks/${modifiedPropertyName}/script.js`;
+  const scriptUrl = `blocks/${modifiedPropertyName}/script.js`;
   try {
-    await runScriptFromFile(fileUrl, propertyName, hoofdpagina);
+    await runScriptFromFile(scriptUrl, propertyName, hoofdpagina);
   } catch (error) {
     console.error('Error fetching and executing script:', error);
   }
 }
+
 
 function runScriptFromFile(fileUrl, propertyName, hoofdpagina) {
   const data = hoofdpagina.data[propertyName];
