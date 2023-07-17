@@ -24,9 +24,47 @@ function jsonCleanup(response) {
           }
 
           var fieldArray = rowData.slice(1).map(function (cell) {
-            return cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-          }).filter(function (value) {
-            return value !== undefined;
+            var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+            var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
+              return run.format && run.format.bold;
+            });
+
+            if (formattedValue && boldRanges && boldRanges.length > 0) {
+              var formattedText = '';
+              var currentIndex = 0;
+            
+              for (var k = 0; k < boldRanges.length; k++) {
+                var range = boldRanges[k];
+                var startIndex = range.startIndex || 0;
+                var word = formattedValue.substring(startIndex);
+                var nextSpaceIndex = word.indexOf(' ');
+            
+                var endIndex;
+                if (nextSpaceIndex === -1) {
+                  endIndex = formattedValue.length;
+                } else {
+                  endIndex = startIndex + nextSpaceIndex;
+                }
+            
+                if (startIndex > currentIndex) {
+                  formattedText += formattedValue.substring(currentIndex, startIndex);
+                }
+            
+                formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
+                currentIndex = endIndex;
+              }
+            
+              if (currentIndex < formattedValue.length) {
+                formattedText += formattedValue.substring(currentIndex);
+              }
+            
+              formattedValue = formattedText;
+            }
+            
+
+            return { value: formattedValue };
+          }).filter(function (valueObj) {
+            return valueObj.value !== undefined;
           });
 
           if (fieldArray.length > 0) {
@@ -45,6 +83,7 @@ function jsonCleanup(response) {
   createDivsFromBlocks(jsonData);
   console.log(jsonData);
 }
+
 
 function fetchSheetAsJSON() {
     var apiKey = 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0'; // Replace with your API key
