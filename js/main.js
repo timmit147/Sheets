@@ -23,49 +23,50 @@ function jsonCleanup(response) {
             count++;
           }
 
-          var fieldArray = rowData.slice(1).map(function (cell) {
-            var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-            var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
-              return run.format && run.format.bold;
-            });
+var fieldArray = rowData.slice(1).map(function (cell) {
+  var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+  var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
+    return run.format && run.format.bold;
+  });
 
-            if (formattedValue && boldRanges && boldRanges.length > 0) {
-              var formattedText = '';
-              var currentIndex = 0;
-            
-              for (var k = 0; k < boldRanges.length; k++) {
-                var range = boldRanges[k];
-                var startIndex = range.startIndex || 0;
-                var word = formattedValue.substring(startIndex);
-                var nextSpaceIndex = word.indexOf(' ');
-            
-                var endIndex;
-                if (nextSpaceIndex === -1) {
-                  endIndex = formattedValue.length;
-                } else {
-                  endIndex = startIndex + nextSpaceIndex;
-                }
-            
-                if (startIndex > currentIndex) {
-                  formattedText += formattedValue.substring(currentIndex, startIndex);
-                }
-            
-                formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
-                currentIndex = endIndex;
-              }
-            
-              if (currentIndex < formattedValue.length) {
-                formattedText += formattedValue.substring(currentIndex);
-              }
-            
-              formattedValue = formattedText;
-            }
-            
+  if (formattedValue && boldRanges && boldRanges.length > 0) {
+    var formattedText = '';
+    var currentIndex = 0;
 
-            return { value: formattedValue };
-          }).filter(function (valueObj) {
-            return valueObj.value !== undefined;
-          });
+    for (var k = 0; k < boldRanges.length; k++) {
+      var range = boldRanges[k];
+      var startIndex = range.startIndex || 0;
+      var word = formattedValue.substring(startIndex);
+      var nextSpaceIndex = word.indexOf(' ');
+
+      var endIndex;
+      if (nextSpaceIndex === -1) {
+        endIndex = formattedValue.length;
+      } else {
+        endIndex = startIndex + nextSpaceIndex;
+      }
+
+      if (startIndex > currentIndex) {
+        formattedText += formattedValue.substring(currentIndex, startIndex);
+      }
+
+      formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
+      currentIndex = endIndex;
+    }
+
+    if (currentIndex < formattedValue.length) {
+      formattedText += formattedValue.substring(currentIndex);
+    }
+
+    // Assign the formatted text directly to the cell
+    cell = formattedText;
+  }
+
+  return cell;
+}).filter(function (valueObj) {
+  return valueObj !== undefined;
+});
+
 
           if (fieldArray.length > 0) {
             sheetObj[propertyName] = fieldArray;
