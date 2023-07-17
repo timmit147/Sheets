@@ -25,56 +25,51 @@ function jsonCleanup(response) {
 
           var fieldArray = rowData.slice(1).map(function (cell) {
             var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-            var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
-              return run.format && run.format.bold;
-            });
-            var italicRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
-              return run.format && run.format.italic;
-            });
+            var runs = cell && cell.textFormatRuns;
 
-            if (formattedValue && (boldRanges || italicRanges)) {
+            if (formattedValue && runs && runs.length > 0) {
               var formattedText = '';
               var currentIndex = 0;
+              var formatTagsStack = [];
 
-              for (var k = 0; k < boldRanges.length; k++) {
-                var range = boldRanges[k];
+              for (var k = 0; k < runs.length; k++) {
+                var range = runs[k];
                 var startIndex = range.startIndex || 0;
-                var word = formattedValue.substring(startIndex);
-                var nextSpaceIndex = word.indexOf(' ');
-
-                var endIndex;
-                if (nextSpaceIndex === -1) {
-                  endIndex = formattedValue.length;
-                } else {
-                  endIndex = startIndex + nextSpaceIndex;
-                }
+                var endIndex = (runs[k + 1] && runs[k + 1].startIndex) || formattedValue.length;
 
                 if (startIndex > currentIndex) {
                   formattedText += formattedValue.substring(currentIndex, startIndex);
                 }
 
-                formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
-                currentIndex = endIndex;
-              }
+                if (range.format) {
+                  var formatTags = '';
 
-              for (var k = 0; k < italicRanges.length; k++) {
-                var range = italicRanges[k];
-                var startIndex = range.startIndex || 0;
-                var word = formattedValue.substring(startIndex);
-                var nextSpaceIndex = word.indexOf(' ');
+                  if (range.format.bold) {
+                    formatTags += '<strong>';
+                    formatTagsStack.push('</strong>');
+                  }
+                  if (range.format.italic) {
+                    formatTags += '<em>';
+                    formatTagsStack.push('</em>');
+                  }
+                  if (range.format.strikethrough) {
+                    formatTags += '<s>';
+                    formatTagsStack.push('</s>');
+                  }
+                  if (range.format.underline) {
+                    formatTags += '<u>';
+                    formatTagsStack.push('</u>');
+                  }
 
-                var endIndex;
-                if (nextSpaceIndex === -1) {
-                  endIndex = formattedValue.length;
-                } else {
-                  endIndex = startIndex + nextSpaceIndex;
+                  formattedText += formatTags;
                 }
 
-                if (startIndex > currentIndex) {
-                  formattedText += formattedValue.substring(currentIndex, startIndex);
+                formattedText += formattedValue.substring(startIndex, endIndex);
+
+                while (formatTagsStack.length > 0) {
+                  formattedText += formatTagsStack.pop();
                 }
 
-                formattedText += '<em>' + formattedValue.substring(startIndex, endIndex) + '</em>';
                 currentIndex = endIndex;
               }
 
