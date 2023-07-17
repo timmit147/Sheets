@@ -1,3 +1,89 @@
+// function jsonCleanup(response) {
+//   var jsonData = {};
+
+//   var sheets = response.sheets;
+//   for (var i = 0; i < sheets.length; i++) {
+//     var sheetData = sheets[i].data[0].rowData;
+//     var sheetName = sheets[i].properties.title;
+
+//     var sheetObj = {};
+//     var sheetArr = []; // Array to maintain the order of properties
+
+//     for (var j = 0; j < sheetData.length; j++) {
+//       var rowData = sheetData[j].values;
+//       if (rowData && rowData.length > 1) {
+//         var fieldA = rowData[0] ? rowData[0].formattedValue : '';
+
+//         if (fieldA) {
+//           var propertyName = fieldA;
+//           var count = 1;
+
+//           while (sheetObj.hasOwnProperty(propertyName)) {
+//             propertyName = fieldA + count;
+//             count++;
+//           }
+
+//           var fieldArray = rowData.slice(1).map(function (cell) {
+//             var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+//             var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
+//               return run.format && run.format.bold;
+//             });
+
+//             if (formattedValue && boldRanges && boldRanges.length > 0) {
+//               var formattedText = '';
+//               var currentIndex = 0;
+            
+//               for (var k = 0; k < boldRanges.length; k++) {
+//                 var range = boldRanges[k];
+//                 var startIndex = range.startIndex || 0;
+//                 var word = formattedValue.substring(startIndex);
+//                 var nextSpaceIndex = word.indexOf(' ');
+            
+//                 var endIndex;
+//                 if (nextSpaceIndex === -1) {
+//                   endIndex = formattedValue.length;
+//                 } else {
+//                   endIndex = startIndex + nextSpaceIndex;
+//                 }
+            
+//                 if (startIndex > currentIndex) {
+//                   formattedText += formattedValue.substring(currentIndex, startIndex);
+//                 }
+            
+//                 formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
+//                 currentIndex = endIndex;
+//               }
+            
+//               if (currentIndex < formattedValue.length) {
+//                 formattedText += formattedValue.substring(currentIndex);
+//               }
+            
+//               formattedValue = formattedText;
+//             }
+            
+
+//             return { value: formattedValue };
+//           }).filter(function (valueObj) {
+//             return valueObj.value !== undefined;
+//           });
+
+//           if (fieldArray.length > 0) {
+//             sheetObj[propertyName] = fieldArray;
+//             sheetArr.push(propertyName); // Add property name to the array
+//           }
+//         }
+//       }
+//     }
+
+//     if (sheetArr.length > 0) {
+//       jsonData[sheetName] = { properties: sheetArr, data: sheetObj };
+//     }
+//   }
+
+//   createDivsFromBlocks(jsonData);
+//   console.log(jsonData);
+// }
+
 function jsonCleanup(response) {
   var jsonData = {};
 
@@ -23,50 +109,48 @@ function jsonCleanup(response) {
             count++;
           }
 
-var fieldArray = rowData.slice(1).map(function (cell) {
-  var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
-  var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
-    return run.format && run.format.bold;
-  });
+          var fieldArray = rowData.slice(1).map(function (cell) {
+            var formattedValue = cell && cell.formattedValue !== null ? cell.formattedValue : undefined;
+            var boldRanges = cell && cell.textFormatRuns && cell.textFormatRuns.filter(function (run) {
+              return run.format && run.format.bold;
+            });
 
-  if (formattedValue && boldRanges && boldRanges.length > 0) {
-    var formattedText = '';
-    var currentIndex = 0;
+            if (formattedValue && boldRanges && boldRanges.length > 0) {
+              var formattedText = '';
+              var currentIndex = 0;
 
-    for (var k = 0; k < boldRanges.length; k++) {
-      var range = boldRanges[k];
-      var startIndex = range.startIndex || 0;
-      var word = formattedValue.substring(startIndex);
-      var nextSpaceIndex = word.indexOf(' ');
+              for (var k = 0; k < boldRanges.length; k++) {
+                var range = boldRanges[k];
+                var startIndex = range.startIndex || 0;
+                var word = formattedValue.substring(startIndex);
+                var nextSpaceIndex = word.indexOf(' ');
 
-      var endIndex;
-      if (nextSpaceIndex === -1) {
-        endIndex = formattedValue.length;
-      } else {
-        endIndex = startIndex + nextSpaceIndex;
-      }
+                var endIndex;
+                if (nextSpaceIndex === -1) {
+                  endIndex = formattedValue.length;
+                } else {
+                  endIndex = startIndex + nextSpaceIndex;
+                }
 
-      if (startIndex > currentIndex) {
-        formattedText += formattedValue.substring(currentIndex, startIndex);
-      }
+                if (startIndex > currentIndex) {
+                  formattedText += formattedValue.substring(currentIndex, startIndex);
+                }
 
-      formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
-      currentIndex = endIndex;
-    }
+                formattedText += '<strong>' + formattedValue.substring(startIndex, endIndex) + '</strong>';
+                currentIndex = endIndex;
+              }
 
-    if (currentIndex < formattedValue.length) {
-      formattedText += formattedValue.substring(currentIndex);
-    }
+              if (currentIndex < formattedValue.length) {
+                formattedText += formattedValue.substring(currentIndex);
+              }
 
-    // Assign the formatted text directly to the cell
-    cell = formattedText;
-  }
+              formattedValue = formattedText;
+            }
 
-  return cell;
-}).filter(function (valueObj) {
-  return valueObj !== undefined;
-});
-
+            return formattedValue;
+          }).filter(function (value) {
+            return value !== undefined;
+          });
 
           if (fieldArray.length > 0) {
             sheetObj[propertyName] = fieldArray;
@@ -84,6 +168,7 @@ var fieldArray = rowData.slice(1).map(function (cell) {
   createDivsFromBlocks(jsonData);
   console.log(jsonData);
 }
+
 
 
 function fetchSheetAsJSON() {
