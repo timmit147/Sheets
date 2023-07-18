@@ -6,7 +6,7 @@ on:
 
 jobs:
   fetchJob:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -26,7 +26,7 @@ jobs:
             function fetchSheetAsJSON() {
               var apiKey = process.env.API_KEY || 'APIKEY';
               var spreadsheetId = process.env.SPREADSHEET_ID || 'SPREADSHEETID';
-              var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
+              var sheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '?includeGridData=true&key=' + apiKey;
 
               return fetch(sheetUrl)
                 .then(function(response) {
