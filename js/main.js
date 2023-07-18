@@ -106,28 +106,26 @@ function jsonCleanup(response) {
 
 
 function fetchSheetAsJSON() {
-  var apiKey = process.env.API_KEY; // Replace with the environment variable name for your API key
-  var spreadsheetId = process.env.SPREADSHEET_ID; // Replace with the environment variable name for your spreadsheet ID
-
+  var apiKey = localStorage.getItem('API_KEY') || process.env.APIKEY;
+  var spreadsheetId = localStorage.getItem('SPREADSHEET_ID') || process.env.SPREADSHEETID;
   var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
 
-  fetch(sheetUrl)
-    .then(function(response) {
-      if (!response.ok) {
-        throw new Error('Failed to fetch Google Sheets data');
-      }
-      return response.json();
-    })
-    .then(function(data) {
-      jsonCleanup(data);
-    })
-    .catch(function(error) {
-      var errorMessage = 'Error fetching Google Sheets data: ' + error.message;
-      var errorContainer = document.getElementById('data-container');
-      errorContainer.textContent = errorMessage;
-    });
+    fetch(sheetUrl)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('Failed to fetch Google Sheets data');
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        jsonCleanup(data);
+      })
+      .catch(function(error) {
+        var errorMessage = 'Error fetching Google Sheets data: ' + error.message;
+        var errorContainer = document.getElementById('data-container');
+        errorContainer.textContent = errorMessage;
+      });
 }
-
 
 async function createDivsFromBlocks(jsonData) {
   const hoofdpagina = jsonData.Hoofdpagina;
