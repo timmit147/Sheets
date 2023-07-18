@@ -18,8 +18,7 @@ jobs:
           APIKEY: ${{ secrets.APIKEY }}
           SPREADSHEETID: ${{ secrets.SPREADSHEETID }}
         run: |
-          sed -i 's/APIKEY/$APIKEY/' js/main.js
-          sed -i 's/SPREADSHEETID/$SPREADSHEETID/' js/main.js
-          echo $SECRET_KEY
-          # Use the secret key in your commands or scripts
-          # For example, you could pass it as an environment variable to your application or use it for authentication purposes.
+          sed -i "s/APIKEY/$APIKEY/" js/main.js
+          sed -i "s/SPREADSHEETID/$SPREADSHEETID/" js/main.js
+          cat js/main.js  # Optional: Print the updated content of the file
+          # Use the updated file in further steps or commands
