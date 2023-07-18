@@ -106,8 +106,8 @@ function jsonCleanup(response) {
 
 
 function fetchSheetAsJSON() {
-  var apiKey = localStorage.getItem('API_KEY') || 'APIKEY';
-  var spreadsheetId = localStorage.getItem('SPREADSHEET_ID') || 'SPREADSHEETID';
+  var apiKey = localStorage.getItem('API_KEY') || 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
+  var spreadsheetId = localStorage.getItem('SPREADSHEET_ID') || '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
   var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
 
     fetch(sheetUrl)
