@@ -1,37 +1,47 @@
-name: My Workflow
+name: Fetch Google Sheets Data
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
-  myJob:
+  fetchJob:
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
-      issues: write
-      deployments: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Perform search and replace
-        run: |
-          sed -i 's/APIKEY/'"${{ secrets.APIKEY }}"'/' js/main.js
-          sed -i 's/SPREADSHEETID/'"${{ secrets.SPREADSHEETID }}"'/' js/main.js
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
 
-      - name: Display modified main.js content
+      - name: Run script
         run: |
-          cat js/main.js
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "timmit147"
-          git config --global user.email "timmeeuwsen@hotmail.nl"
-          git add js/main.js
-          git commit -m "Update main.js with replaced values"
-          git push
+          npm install node-fetch
+          node -e "
+            const fetch = require('node-fetch');
+
+            function fetchSheetAsJSON() {
+              var apiKey = process.env.API_KEY || 'APIKEY';
+              var spreadsheetId = process.env.SPREADSHEET_ID || 'SPREADSHEETID';
+              var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
+
+              return fetch(sheetUrl)
+                .then(function(response) {
+                  if (!response.ok) {
+                    throw new Error('Failed to fetch Google Sheets data');
+                  }
+                  return response.json();
+                });
+            }
+
+            fetchSheetAsJSON()
+              .then(function(data) {
+                console.log(data);
+              })
+              .catch(function(error) {
+                console.error('Error fetching Google Sheets data:', error);
+              });
+          "
