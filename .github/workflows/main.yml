@@ -17,3 +17,7 @@ jobs:
         run: |
           sed -i 's/API_KEY/'"${{ secrets.APIKEY }}"'/' js/main.js
           sed -i 's/SPREADSHEET_ID/'"${{ secrets.SPREADSHEETID }}"'/' js/main.js
+
+      - name: Display modified main.js content
+        run: |
+          cat js/main.js
