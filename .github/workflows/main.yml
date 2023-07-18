@@ -15,8 +15,8 @@ jobs:
 
       - name: Perform search and replace
         run: |
-          sed -i 's/APIKEY/'"${{ secrets.APIKEY }}"/g' js/main.js
-          sed -i 's/SPREADSHEETID/'"${{ secrets.SPREADSHEETID }}"/g' js/main.js
+          sed -i 's/APIKEY/'"${{ secrets.APIKEY }}"'/' js/main.js
+          sed -i 's/SPREADSHEETID/'"${{ secrets.SPREADSHEETID }}"'/' js/main.js
 
       - name: Display modified main.js content
         run: |
