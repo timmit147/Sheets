@@ -28,15 +28,6 @@ jobs:
           node-version: "14"
       - name: Install dependencies
         run: npm install
-
-      - name: Fetch data
-        run: |
-          node -e '
-          var apiKey = process.env.API_KEY || "APIKEY";
-          var spreadsheetId = process.env.SPREADSHEET_ID || "SPREADSHEETID";
-          var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
-          // Add your data fetching logic here using sheetUrl
-          '
           
       - name: Commit and push updated data
         run: |
