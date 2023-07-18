@@ -8,25 +8,30 @@ on:
 jobs:
   myJob:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+      issues: write
+      deployments: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-          
-      - name: Set node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-      - name: Install dependencies
-        run: npm install
-          
-      - name: Commit and push updated data
+
+      - name: Perform search and replace
+        run: |
+          sed -i 's/APIKEY/'"${{ secrets.APIKEY }}"'/' js/main.js
+          sed -i 's/SPREADSHEETID/'"${{ secrets.SPREADSHEETID }}"'/' js/main.js
+
+      - name: Display modified main.js content
+        run: |
+          cat js/main.js
+      - name: Commit and push changes
         run: |
           git config --global user.name "timmit147"
           git config --global user.email "timmeeuwsen@hotmail.nl"
-          git add .
-          git commit -m "Update data"
-          
-          # Grant permissions to the workflow
-          git remote set-url origin "${{ secrets.GITHUB_TOKEN }}"
-          git push origin HEAD:main
+          git add js/json.js
+          git commit -m "Update json.js with replaced values"
+          git push
