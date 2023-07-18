@@ -12,15 +12,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Perform search and replace
-        run: |
-          sed -i 's/APIKEY/'"${{ secrets.APIKEY }}"'/' js/main.js
-          sed -i 's/SPREADSHEETID/'"${{ secrets.SPREADSHEETID }}"'/' js/main.js
-
-      - name: Display modified main.js content
-        run: |
-          cat js/main.js
           
       - name: Set node
         uses: actions/setup-node@v2
