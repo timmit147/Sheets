@@ -32,6 +32,6 @@ jobs:
         run: |
           git config --global user.name "timmit147"
           git config --global user.email "timmeeuwsen@hotmail.nl"
-          git add js/json.js
-          git commit -m "Update json.js with replaced values"
+          git add js/main.js
+          git commit -m "Update main.js with replaced values"
           git push
