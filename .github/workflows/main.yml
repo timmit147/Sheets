@@ -21,3 +21,10 @@ jobs:
       - name: Display modified main.js content
         run: |
           cat js/main.js
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "timmit147"
+          git config --global user.email "timmeeuwsen@hotmail.nl"
+          git add js/main.js
+          git commit -m "Update main.js with replaced values"
+          git push
