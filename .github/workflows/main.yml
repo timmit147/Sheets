@@ -1,0 +1,23 @@
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  myJob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use the secret
+        env:
+          APIKEY: ${{ secrets.APIKEY }}
+          SPREADSHEETID: ${{ secrets.SPREADSHEETID }}
+        run: |
+          echo $SECRET_KEY
+          # Use the secret key in your commands or scripts
+          # For example, you could pass it as an environment variable to your application or use it for authentication purposes.
