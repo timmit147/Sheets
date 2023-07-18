@@ -30,8 +30,14 @@ jobs:
         run: npm install
 
       - name: Fetch data
-        run: node fetch-data-script.js
-
+        run: |
+          node -e '
+          var apiKey = process.env.API_KEY || "APIKEY";
+          var spreadsheetId = process.env.SPREADSHEET_ID || "SPREADSHEETID";
+          var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
+          // Add your data fetching logic here using sheetUrl
+          '
+          
       - name: Commit and push updated data
         run: |
           git config --global user.name "timmit147"
