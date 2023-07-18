@@ -1,27 +1,23 @@
-name: Fetch Data
+name: My Workflow
 
 on:
-  schedule:
-    - cron: "0 */1 * * *"
+  push:
+    branches:
+      - main
 
 jobs:
-  fetch-data:
+  myJob:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Fetch data
+      - name: Perform search and replace
         run: |
-          # Your data fetching script/command goes here
-          # For example, using cURL to fetch data from an API
-          curl -o data.json https://api.example.com/data
+          sed -i 's/APIKEY/'"${{ secrets.APIKEY }}"'/' js/main.js
+          sed -i 's/SPREADSHEETID/'"${{ secrets.SPREADSHEETID }}"'/' js/main.js
 
-      - name: Commit and push updated data
+      - name: Display modified main.js content
         run: |
-          git config --global user.name "timmit147"
-          git config --global user.email "timmeeuwsen@hotmail.nl"
-          git add data.json
-          git commit -m "Update data.json"
-          git push
+          cat js/main.js
