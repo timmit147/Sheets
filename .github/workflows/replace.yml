@@ -13,7 +13,32 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # ... other steps ...
+    - name: List files in the directory (for debugging purposes)
+      run: |
+        ls -la js/
+
+    - name: Check if version exists and set to 1 if not
+      id: version
+      run: |
+        if ! grep -q '^\/\/ Version' js/json.js; then
+          echo -e "// Version 1\n$(cat js/json.js)" > js/json.js
+          version=1
+        else
+          version=$(grep -oP '^\/\/ Version \K(\d+)' js/json.js)
+        fi
+        echo "::set-output name=version::$version"
+
+    - name: Replace text in js/json.js
+      run: |
+        sed -i 's/jsonReplace/hello/g' js/json.js
+
+    - name: List files in the directory after replacement (for debugging purposes)
+      run: |
+        ls -la js/
+
+    - name: Check for changes in git status (for debugging purposes)
+      run: |
+        git status
 
     - name: Commit and push changes
       env:
