@@ -36,6 +36,5 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "Update js/json.js with replaced values"
-        commit_options: "--author 'timmit147 <timmeeuwsen@hotmail.nl>'"
         commit_user_name: "timmit147" # Set the correct author name here
         commit_user_email: "timmeeuwsen@hotmail.nl" # Set the correct author email here
