@@ -1,27 +1,26 @@
-name: Replace Text and Push
+name: Text Replace and Push
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  push:
+    branches:
+      - main # Change this to the desired branch name
 
 jobs:
-  replace-text-and-push:
-    name: Replace Text and Push
+  text_replace:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Replace Text
-        run: |
-          # Replace 'jsonReplace' with 'hello' in main.js
-          sed -i 's/jsonReplace/hello/g' main.js
+    - name: Replace text in main.js
+      run: |
+        # Replace "jsonReplace" with "hello" in main.js
+        sed -i 's/jsonReplace/hello/g' main.js
 
-      - name: Commit and Push Changes
-        run: |
-          git config --local user.email "timmeeuwsen@hotmail.nl"
-          git config --local user.name "timmit147"
-          git add main.js
-          git commit -m "Text replacement: jsonReplace to hello"
-          git push
+    - name: Commit changes
+      run: |
+        git config --local user.email "timmeeuwsen@hotmail.nl"
+        git config --local user.name "timmit147"
+        git commit -am "Text replace using GitHub Action"
+        git push
