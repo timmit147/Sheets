@@ -24,7 +24,7 @@ jobs:
         fi
         echo "::set-output name=version::$version"
 
-    - name: Replace text in main.js
+    - name: Replace text in js/json.js # Corrected the file path
       run: |
         sed -i 's/jsonReplace/hello/g' js/json.js
 
@@ -32,6 +32,6 @@ jobs:
       run: |
         git config --global user.name "timmit147"
         git config --global user.email "timmeeuwsen@hotmail.nl"
-        git add js/main.js
-        git commit -m "Update main.js with replaced values"
+        git add js/json.js # Corrected the file path
+        git commit -m "Update js/json.js with replaced values" # Corrected the commit message
         git push
