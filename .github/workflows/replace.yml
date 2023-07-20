@@ -13,16 +13,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Determine version number
+    - name: Check if version exists and set to 1 if not
       id: version
       run: |
-        version=$(grep -oP '^\/\/ Version \K(\d+)' js/json.js)
-        if [ -z "$version" ]; then
+        if ! grep -q '^\/\/ Version' js/json.js; then
+          echo -e "// Version 1\n$(cat js/json.js)" > js/json.js
           version=1
         else
-          version=$((version + 1))
+          version=$(grep -oP '^\/\/ Version \K(\d+)' js/json.js)
         fi
-        echo -e "\n\/\/ Version $version" >> js/json.js
         echo "::set-output name=version::$version"
 
     - name: Replace text in main.js
