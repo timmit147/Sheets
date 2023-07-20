@@ -16,7 +16,7 @@ jobs:
     - name: Replace text in main.js
       run: |
         # Replace "jsonReplace" with "hello" in main.js
-        sed -i 's/jsonReplace/hello/g' main.js
+        sed -i 's/jsonReplace/hello/g' js/main.js
 
     - name: Commit changes
       run: |
