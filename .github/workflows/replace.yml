@@ -13,25 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Check if version exists and set to 1 if not
-      id: version
-      run: |
-        if ! grep -q '^\/\/ Version' js/json.js; then
-          echo -e "// Version 1\n$(cat js/json.js)" > js/json.js
-          version=1
-        else
-          version=$(grep -oP '^\/\/ Version \K(\d+)' js/json.js)
-        fi
-        echo "::set-output name=version::$version"
-
-    - name: Replace text in js/json.js # Corrected the file path
-      run: |
-        sed -i 's/jsonReplace/hello/g' js/json.js
+    # ... other steps ...
 
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         git config --global user.name "timmit147"
         git config --global user.email "timmeeuwsen@hotmail.nl"
-        git add js/json.js # Corrected the file path
-        git commit -m "Update js/json.js with replaced values" # Corrected the commit message
-        git push
+        git add js/json.js
+        git commit -m "Update js/json.js with replaced values"
+        git push origin main
