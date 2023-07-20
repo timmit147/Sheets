@@ -28,11 +28,10 @@ jobs:
       run: |
         sed -i 's/jsonReplace/hello/g' js/json.js
 
-    - name: Commit changes
+    - name: Commit and push changes
       run: |
-        git config --local user.email "timmeeuwsen@hotmail.nl"
-        git config --local user.name "timmit147"
-        git commit -am "Text replace using GitHub Action (Version ${{ steps.version.outputs.version }})"
-        git push --set-upstream origin ${{ github.ref }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        git config --global user.name "timmit147"
+        git config --global user.email "timmeeuwsen@hotmail.nl"
+        git add js/main.js
+        git commit -m "Update main.js with replaced values"
+        git push
