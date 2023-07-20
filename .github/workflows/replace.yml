@@ -22,7 +22,7 @@ jobs:
         else
           version=$((version + 1))
         fi
-        echo "Version $version" >> js/json.js
+        echo -e "\n\/\/ Version $version" >> js/json.js
         echo "::set-output name=version::$version"
 
     - name: Replace text in main.js
