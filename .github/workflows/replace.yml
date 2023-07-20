@@ -1,0 +1,27 @@
+name: Replace Text and Push
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+
+jobs:
+  replace-text-and-push:
+    name: Replace Text and Push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Replace Text
+        run: |
+          # Replace 'jsonReplace' with 'hello' in main.js
+          sed -i 's/jsonReplace/hello/g' main.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "timmeeuwsen@hotmail.nl"
+          git config --local user.name "timmit147"
+          git add main.js
+          git commit -m "Text replacement: jsonReplace to hello"
+          git push
