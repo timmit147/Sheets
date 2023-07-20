@@ -13,14 +13,25 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Determine version number
+      id: version
+      run: |
+        version=$(grep -oP '^\/\/ Version \K(\d+)' main.js)
+        if [ -z "$version" ]; then
+          version=1
+        else
+          version=$((version + 1))
+        fi
+        echo "Version $version" >> main.js
+        echo "::set-output name=version::$version"
+
     - name: Replace text in main.js
       run: |
-        # Replace "jsonReplace" with "hello" in main.js
-        sed -i 's/jsonReplace/hello/g' js/main.js
+        sed -i 's/jsonReplace/hello/g' main.js
 
     - name: Commit changes
       run: |
         git config --local user.email "timmeeuwsen@hotmail.nl"
         git config --local user.name "timmit147"
-        git commit -am "Text replace using GitHub Action"
+        git commit -am "Text replace using GitHub Action (Version ${{ steps.version.outputs.version }})"
         git push
