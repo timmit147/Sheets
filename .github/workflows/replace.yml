@@ -16,18 +16,18 @@ jobs:
     - name: Determine version number
       id: version
       run: |
-        version=$(grep -oP '^\/\/ Version \K(\d+)' main.js)
+        version=$(grep -oP '^\/\/ Version \K(\d+)' js/json.js)
         if [ -z "$version" ]; then
           version=1
         else
           version=$((version + 1))
         fi
-        echo "Version $version" >> main.js
+        echo "Version $version" >> js/json.js
         echo "::set-output name=version::$version"
 
     - name: Replace text in main.js
       run: |
-        sed -i 's/jsonReplace/hello/g' main.js
+        sed -i 's/jsonReplace/hello/g' js/json.js
 
     - name: Commit changes
       run: |
