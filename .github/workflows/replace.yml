@@ -19,6 +19,9 @@ jobs:
       - name: Reset to latest commit
         run: git reset --hard origin/main
 
+      - name: Pull latest changes
+        run: git pull origin main
+
       - name: Update file content
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
