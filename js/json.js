@@ -1,5 +1,3 @@
-
-2023-07-22 20:59:14
 {
   "spreadsheetId": "1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4",
   "properties": {
