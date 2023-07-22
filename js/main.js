@@ -101,31 +101,25 @@ function jsonCleanup(response) {
   createDivsFromBlocks(jsonData);
   console.log(jsonData);
 }
-
-
-
-
-function fetchSheetAsJSON() {
-  var apiKey = localStorage.getItem('API_KEY') || 'AIzaSyCNb3QEXaLYWUI3gVY-LOn0jKj1kcpT_e0';
-  var spreadsheetId = localStorage.getItem('SPREADSHEET_ID') || '1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4';
-  var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
-
-    fetch(sheetUrl)
-      .then(function(response) {
-        if (!response.ok) {
-          throw new Error('Failed to fetch Google Sheets data');
-        }
-        return response.json();
-      })
-      .then(function(data) {
-        jsonCleanup(data);
-      })
-      .catch(function(error) {
-        var errorMessage = 'Error fetching Google Sheets data: ' + error.message;
-        var errorContainer = document.getElementById('data-container');
-        errorContainer.textContent = errorMessage;
-      });
-}
+    function fetchSheetAsJSON() {
+      fetch('json.js')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch JSON data');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Use the data as needed
+          console.log(data);
+          // Example: Display data in the HTML container
+          const dataContainer = document.getElementById('data-container');
+          dataContainer.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          console.error('Error fetching JSON data:', error.message);
+        });
+    }
 
 async function createDivsFromBlocks(jsonData) {
   const hoofdpagina = jsonData.Hoofdpagina;
