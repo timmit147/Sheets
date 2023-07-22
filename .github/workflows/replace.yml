@@ -41,7 +41,7 @@ jobs:
           git commit -m "Update file content"
 
       - name: Pull latest changes from remote
-        run: git pull origin main
+        run: git pull origin update-file-content
 
       - name: Push changes to the new branch
         run: git push origin update-file-content
