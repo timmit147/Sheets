@@ -40,9 +40,8 @@ jobs:
           git add .
           git commit -m "Update file content"
 
+      - name: Pull latest changes from remote
+        run: git pull origin main
+
       - name: Push changes to the new branch
         run: git push origin update-file-content
-
-      - name: Create pull request
-        run: |
-          gh pr create --base main --head update-file-content --title "Update File Content" --body "This pull request updates the content of the js/json.js file." --token ${{ secrets.GH_TOKEN }}
