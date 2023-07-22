@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Adjust this based on your branch name
 
-jobs: 
+jobs:
   update_file:
     runs-on: ubuntu-latest
 
@@ -19,41 +19,29 @@ jobs:
       - name: Create new branch
         run: git checkout -b update-file-content
 
-      - name: Update file content
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Set git user email and name
         run: |
-          # Set your username and email
-          USERNAME="timmit147"
-          EMAIL="timmeeuwsen@hotmail.nl"
-          
+          git config --local user.email "timmeeuwsen@hotmail.nl" 
+          git config --local user.name "timmit147"
+      
+      - name: Modify file content
+        run: |
           # File to be updated
           FILE_PATH="js/json.js"
 
           # New content for the file
           NEW_CONTENT="console.log('Hello, World!');"
 
-          # Base64 encode the new content
-          ENCODED_CONTENT=$(echo "$NEW_CONTENT" | base64)
-
-          # Get the current commit SHA
-          COMMIT_SHA=$(git rev-parse HEAD)
-
-          # Update the file using the GitHub API
-          curl -X PUT \
-            -H "Authorization: token $GH_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"$USERNAME\", \"email\": \"$EMAIL\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH"
+          # Replace the content in the file
+          echo "$NEW_CONTENT" > "$FILE_PATH"
 
       - name: Commit changes
         run: |
-          git config --local user.email "$EMAIL"
-          git config --local user.name "$USERNAME"
-          git commit -a -m "Update file content"
-      
+          git add .
+          git commit -m "Update file content"
+
+      - name: Pull latest changes from remote (using rebase strategy)
+        run: git pull --rebase origin update-file-content
+
       - name: Push changes to the new branch
-        uses: ad-m/github-push-action@master
-        with:
-          branch: update-file-content
-          github_token: ${{ secrets.GH_TOKEN }}
+        run: git push origin update-file-content
