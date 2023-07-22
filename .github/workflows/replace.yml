@@ -16,13 +16,17 @@ jobs:
       - name: Fetch latest changes
         run: git fetch origin main  # Replace 'main' with the appropriate branch name
 
-      - name: Create new branch
-        run: git checkout -b update-file-content
+      - name: Reset to latest commit
+        run: git reset --hard origin/main
+
+      - name: Pull latest changes
+        run: git pull origin main
 
       - name: Set git user email and name
         run: |
           git config --local user.email "timmeeuwsen@hotmail.nl" 
           git config --local user.name "timmit147"
+      
       - name: Update file content
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
