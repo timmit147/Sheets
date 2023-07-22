@@ -35,7 +35,7 @@ jobs:
 
           # Update the file using the GitHub API
           curl -X PUT \
-            -H "Authorization: token $PAT_TOKEN" \
+            -H "Authorization: token $GH_TOKEN" \
             -H "Content-Type: application/json" \
             -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"$USERNAME\", \"email\": \"$EMAIL\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
             "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH"
