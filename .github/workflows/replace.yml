@@ -2,7 +2,7 @@ name: Update File with Timestamp
 on:
   push:
     branches:
-      - main # Change this to your main branch name if different
+      - main
 
 jobs:
   update_file:
@@ -27,9 +27,9 @@ jobs:
           # Generate the timestamp in the desired format
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
           # Create the content with the timestamp
-          NEW_CONTENT="$TIMESTAMP\n$(cat js/json.js)"
-          # Update the file with the new content
-          echo "$NEW_CONTENT" > js/json.js
+          echo "$TIMESTAMP" > temp.txt
+          cat js/json.js >> temp.txt
+          mv temp.txt js/json.js
           # Commit and push the changes back to the repository
           git config --global user.name "timmit147"
           git config --global user.email "timmeeuwsen@hotmail.nl"
