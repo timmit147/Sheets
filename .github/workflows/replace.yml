@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Adjust this based on your branch name
 
-jobs:
+jobs: 
   update_file:
     runs-on: ubuntu-latest
 
