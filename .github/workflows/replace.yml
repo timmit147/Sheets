@@ -43,6 +43,9 @@ jobs:
           # Get the current commit SHA
           COMMIT_SHA=$(git rev-parse HEAD)
 
+          # Create a new branch for the changes
+          git checkout -b update-file-content
+
           # Update the file using the GitHub API
           RESPONSE=$(curl -X PUT \
             -H "Authorization: token $GH_TOKEN" \
@@ -57,13 +60,9 @@ jobs:
             exit 1
           fi
 
-      - name: Show changes
-        run: git status
-
       - name: Commit changes
         run: |
-          git add .
-          git commit -m "Update file content"
+          git commit -a -m "Update file content"
       
       - name: Push changes to the new branch
         uses: ad-m/github-push-action@master
