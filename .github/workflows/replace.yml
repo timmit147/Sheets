@@ -39,9 +39,11 @@ jobs:
         run: |
           git add .
           git commit -m "Update file content"
-      
+
       - name: Push changes to the new branch
-        uses: ad-m/github-push-action@master
-        with:
-          branch: update-file-content
-          github_token: ${{ secrets.GH_TOKEN }}
+        run: git push origin update-file-content
+
+      - name: Create pull request
+        run: |
+          gh pr create --base main --head update-file-content --title "Update File Content" --body "This pull request updates the content of the js/json.js file."
+
