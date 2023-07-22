@@ -21,9 +21,8 @@ jobs:
 
       - name: Set git user email and name
         run: |
-          git config --local user.email "timmeeuwsen@hotmail.nl"
+          git config --local user.email "timmeeuwsen@hotmail.nl" 
           git config --local user.name "timmit147"
-      
       - name: Update file content
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -41,11 +40,21 @@ jobs:
           COMMIT_SHA=$(git rev-parse HEAD)
 
           # Update the file using the GitHub API
-          curl -X PUT \
+          RESPONSE=$(curl -X PUT \
             -H "Authorization: token $GH_TOKEN" \
             -H "Content-Type: application/json" \
             -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"Tim Me\", \"email\": \"timme@example.com\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH"
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH")
+
+          # Check the response for errors
+          ERROR=$(echo "$RESPONSE" | jq -r '.message')
+          if [ "$ERROR" != "null" ]; then
+            echo "Error: $ERROR"
+            exit 1
+          fi
+
+      - name: Show changes
+        run: git status
 
       - name: Commit changes
         run: |
