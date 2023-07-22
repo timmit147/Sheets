@@ -103,24 +103,23 @@ function jsonCleanup(response) {
 }
 
 function fetchSheetAsJSON() {
-  fetch('js/json.js')
-    .then(response => {
+  var jsonUrl = 'js/json.js';
+
+  fetch(jsonUrl)
+    .then(function(response) {
       if (!response.ok) {
         throw new Error('Failed to fetch JSON data');
       }
       return response.json();
     })
-    .then(data => {
-      // Use the data as needed
-      console.log(data);
-      // Example: Display data in the HTML container
-      const dataContainer = document.getElementById('data-container');
-      dataContainer.textContent = JSON.stringify(data, null, 2);
+    .then(function(data) {
+      jsonCleanup(data);
     })
-    .catch(error => {
-      console.error('Error fetching JSON data:', error.message);
+    .catch(function(error) {
+      console.error('Error fetching JSON data: ', error);
     });
 }
+
 
 async function createDivsFromBlocks(jsonData) {
   const hoofdpagina = jsonData.Hoofdpagina;
