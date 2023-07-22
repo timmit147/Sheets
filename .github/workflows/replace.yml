@@ -48,7 +48,7 @@ jobs:
               });
           }
           
-          fetchSheetAsJSON;
+          fetchSheetAsJSON;  # <-- Add parentheses here to execute the function
 
       - name: Update File
         env:
