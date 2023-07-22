@@ -12,6 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Fetch JSON data
+        env:
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEETID }}
+          API_KEY: ${{ secrets.APIKEY }}
+        run: |
+          # Fetch JSON data using curl
+          curl -s -o fetchedData.json "https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?includeGridData=true&key=${API_KEY}"
+          
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -19,36 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install # You can use yarn if you prefer
-
-      - name: Fetch JSON data
-        env:
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEETID }}
-          API_KEY: ${{ secrets.APIKEY }}
-        run: |
-          # Fetch JSON data using the provided function
-          function fetchSheetAsJSON() {
-            var apiKey = process.env.API_KEY;
-            var spreadsheetId = process.env.SPREADSHEET_ID;
-            var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
-          
-            fetch(sheetUrl)
-              .then(function (response) {
-                if (!response.ok) {
-                  throw new Error('Failed to fetch Google Sheets data');
-                }
-                return response.json();
-              })
-              .then(function (data) {
-                // Modify the data if needed, then save it to js/json.js
-                var fs = require('fs');
-                fs.writeFileSync('js/json.js', JSON.stringify(data, null, 2));
-              })
-              .catch(function (error) {
-                console.error('Error fetching Google Sheets data:', error.message);
-              });
-          }
-          
-          fetchSheetAsJSON;  # <-- Add parentheses here to execute the function
 
       - name: Update File
         env:
@@ -58,6 +36,8 @@ jobs:
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
           # Create the content with the timestamp
           echo "$TIMESTAMP" >> js/json.js
+          # Append the fetched JSON data to js/json.js
+          cat fetchedData.json >> js/json.js
           # Commit and push the changes back to the repository
           git config --global user.name "timmit147"
           git config --global user.email "timmeeuwsen@hotmail.nl"
