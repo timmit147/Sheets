@@ -14,7 +14,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Fetch latest changes
-        run: git pull origin main  # Replace 'main' with the appropriate branch name
+        run: git fetch origin main  # Replace 'main' with the appropriate branch name
+
+      - name: Reset to latest commit
+        run: git reset --hard origin/main
 
       - name: Update file content
         env:
