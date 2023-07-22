@@ -101,25 +101,26 @@ function jsonCleanup(response) {
   createDivsFromBlocks(jsonData);
   console.log(jsonData);
 }
-    function fetchSheetAsJSON() {
-      fetch('json.js')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch JSON data');
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Use the data as needed
-          console.log(data);
-          // Example: Display data in the HTML container
-          const dataContainer = document.getElementById('data-container');
-          dataContainer.textContent = JSON.stringify(data, null, 2);
-        })
-        .catch(error => {
-          console.error('Error fetching JSON data:', error.message);
-        });
-    }
+
+function fetchSheetAsJSON() {
+  fetch('js/json.js')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch JSON data');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Use the data as needed
+      console.log(data);
+      // Example: Display data in the HTML container
+      const dataContainer = document.getElementById('data-container');
+      dataContainer.textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+      console.error('Error fetching JSON data:', error.message);
+    });
+}
 
 async function createDivsFromBlocks(jsonData) {
   const hoofdpagina = jsonData.Hoofdpagina;
