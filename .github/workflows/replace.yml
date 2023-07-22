@@ -13,6 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Fetch latest changes
+        run: git pull origin main  # Replace 'main' with the appropriate branch name
+
       - name: Update file content
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -39,4 +42,3 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"$USERNAME\", \"email\": \"$EMAIL\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
             "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH"
-
