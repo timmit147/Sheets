@@ -1,12 +1,11 @@
 name: Update File with Timestamp and Fetch JSON
-
-on: 
+on:
   push:
     branches:
       - main
 
 jobs:
-  update_file:
+  update_file_and_fetch_json:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,42 +18,46 @@ jobs:
           node-version: '14.x' # Change this to your desired Node.js version
 
       - name: Install dependencies
-        run: |
-          npm install node-fetch fs
+        run: npm install # You can use yarn if you prefer
 
-      - name: Fetch JSON and Update File
+      - name: Fetch JSON data
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SPREADSHEET_ID: ${{ secrets.SPREADSHEETID }}
           API_KEY: ${{ secrets.APIKEY }}
         run: |
-          # Fetch JSON data using the function and store it in a temporary file
-          node --experimental-modules -e "
-          const fetch = require('node-fetch');
-          const fs = require('fs');
+          # Fetch JSON data using the provided function
+          function fetchSheetAsJSON() {
+            var apiKey = process.env.API_KEY;
+            var spreadsheetId = process.env.SPREADSHEET_ID;
+            var sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&key=${apiKey}`;
+          
+            fetch(sheetUrl)
+              .then(function (response) {
+                if (!response.ok) {
+                  throw new Error('Failed to fetch Google Sheets data');
+                }
+                return response.json();
+              })
+              .then(function (data) {
+                // Modify the data if needed, then save it to js/json.js
+                var fs = require('fs');
+                fs.writeFileSync('js/json.js', JSON.stringify(data, null, 2));
+              })
+              .catch(function (error) {
+                console.error('Error fetching Google Sheets data:', error.message);
+              });
+          }
+          
+          fetchSheetAsJSON;
 
-          var apiKey = process.env.API_KEY || 'YOUR_DEFAULT_API_KEY';
-          var spreadsheetId = process.env.SPREADSHEET_ID || 'YOUR_DEFAULT_SPREADSHEET_ID';
-          var sheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '?includeGridData=true&key=' + apiKey;
-
-          fetch(sheetUrl)
-            .then(response => response.json())
-            .then(data => {
-              fs.writeFileSync('temp.json', JSON.stringify(data, null, 2));
-            })
-            .catch(error => {
-              console.error('Error fetching Google Sheets data:', error.message);
-              process.exit(1);
-            });
-          "
-
+      - name: Update File
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
           # Generate the timestamp in the desired format
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
           # Create the content with the timestamp
-          echo "$TIMESTAMP" > temp.txt
-          cat temp.json >> temp.txt
-          mv temp.txt js/json.js
-
+          echo "$TIMESTAMP" >> js/json.js
           # Commit and push the changes back to the repository
           git config --global user.name "timmit147"
           git config --global user.email "timmeeuwsen@hotmail.nl"
