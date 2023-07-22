@@ -19,14 +19,15 @@ jobs:
       - name: Create new branch
         run: git checkout -b update-file-content
 
+      - name: Set git user email and name
+        run: |
+          git config --local user.email "timmeeuwsen@hotmail.nl"
+          git config --local user.name "timmit147"
+      
       - name: Update file content
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          # Set your username and email
-          USERNAME="timmit147"
-          EMAIL="timmeeuwsen@hotmail.nl"
-          
           # File to be updated
           FILE_PATH="js/json.js"
 
@@ -43,13 +44,11 @@ jobs:
           curl -X PUT \
             -H "Authorization: token $GH_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"$USERNAME\", \"email\": \"$EMAIL\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
+            -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"Tim Me\", \"email\": \"timme@example.com\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
             "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH"
 
       - name: Commit changes
         run: |
-          git config --local user.email "$EMAIL"
-          git config --local user.name "$USERNAME"
           git commit -a -m "Update file content"
       
       - name: Push changes to the new branch
