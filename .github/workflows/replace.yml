@@ -29,7 +29,7 @@ jobs:
           API_KEY: ${{ secrets.APIKEY }}
         run: |
           # Fetch JSON data using the function and store it in a temporary file
-          node -e "const fetch = require('node-fetch'); const fs = require('fs'); var apiKey = process.env.API_KEY || 'YOUR_DEFAULT_API_KEY'; var spreadsheetId = process.env.SPREADSHEET_ID || 'YOUR_DEFAULT_SPREADSHEET_ID'; var sheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '?includeGridData=true&key=' + apiKey; fetch(sheetUrl).then(response => response.json()).then(data => { fs.writeFileSync('temp.json', JSON.stringify(data, null, 2)); }).catch(error => { console.error('Error fetching Google Sheets data:', error.message); process.exit(1); });"
+          node --experimental-modules -e "import fetch from 'node-fetch'; import fs from 'fs'; var apiKey = process.env.API_KEY || 'YOUR_DEFAULT_API_KEY'; var spreadsheetId = process.env.SPREADSHEET_ID || 'YOUR_DEFAULT_SPREADSHEET_ID'; var sheetUrl = 'https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '?includeGridData=true&key=' + apiKey; fetch(sheetUrl).then(response => response.json()).then(data => { fs.writeFileSync('temp.json', JSON.stringify(data, null, 2)); }).catch(error => { console.error('Error fetching Google Sheets data:', error.message); process.exit(1); });"
 
           # Generate the timestamp in the desired format
           TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
