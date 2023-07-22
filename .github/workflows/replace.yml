@@ -16,11 +16,8 @@ jobs:
       - name: Fetch latest changes
         run: git fetch origin main  # Replace 'main' with the appropriate branch name
 
-      - name: Reset to latest commit
-        run: git reset --hard origin/main
-
-      - name: Pull latest changes
-        run: git pull origin main
+      - name: Create new branch
+        run: git checkout -b update-file-content
 
       - name: Update file content
         env:
@@ -48,3 +45,15 @@ jobs:
             -H "Content-Type: application/json" \
             -d "{\"message\": \"Update file content\", \"committer\": {\"name\": \"$USERNAME\", \"email\": \"$EMAIL\"}, \"content\": \"$ENCODED_CONTENT\", \"sha\": \"$COMMIT_SHA\"}" \
             "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/$FILE_PATH"
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "$EMAIL"
+          git config --local user.name "$USERNAME"
+          git commit -a -m "Update file content"
+      
+      - name: Push changes to the new branch
+        uses: ad-m/github-push-action@master
+        with:
+          branch: update-file-content
+          github_token: ${{ secrets.GH_TOKEN }}
