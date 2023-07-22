@@ -1,11 +1,11 @@
-name: Fetch and Update JSON
+name: Update File with Timestamp and Fetch JSON
 on:
   push:
     branches:
       - main
 
 jobs:
-  update_json:
+  update_file_and_fetch_json:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,9 +17,9 @@ jobs:
           SPREADSHEET_ID: ${{ secrets.SPREADSHEETID }}
           API_KEY: ${{ secrets.APIKEY }}
         run: |
-          # Fetch JSON data using curl and save it directly to js/json.js
-          curl -s "https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?includeGridData=true&key=${API_KEY}" > js/json.js
-
+          # Fetch JSON data using curl
+          curl -s -o fetchedData.json "https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?includeGridData=true&key=${API_KEY}"
+          
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -28,13 +28,19 @@ jobs:
       - name: Install dependencies
         run: npm install # You can use yarn if you prefer
 
-      - name: Commit and push changes
+      - name: Update File
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
+          # Generate the timestamp in the desired format
+          TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
+          # Create the content with the timestamp
+          echo "$TIMESTAMP" >> js/json.js
+          # Append the fetched JSON data to js/json.js
+          cat fetchedData.json >> js/json.js
           # Commit and push the changes back to the repository
           git config --global user.name "timmit147"
           git config --global user.email "timmeeuwsen@hotmail.nl"
           git add js/json.js
-          git commit -m "Update JSON data"
+          git commit -m "Update file with timestamp and fetched JSON data"
           git push origin main
