@@ -1,47 +1,38 @@
-name: Update File Content
-
+name: Update File with Timestamp
 on:
   push:
     branches:
-      - main  # Adjust this based on your branch name
+      - main # Change this to your main branch name if different
 
 jobs:
   update_file:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Fetch latest changes
-        run: git fetch origin main  # Replace 'main' with the appropriate branch name
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x' # Change this to your desired Node.js version
 
-      - name: Create new branch
-        run: git checkout -b update-file-content
+      - name: Install dependencies
+        run: npm install # You can use yarn if you prefer
 
-      - name: Set git user email and name
+      - name: Update File
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --local user.email "timmeeuwsen@hotmail.nl" 
-          git config --local user.name "timmit147"
-      
-      - name: Modify file content
-        run: |
-          # File to be updated
-          FILE_PATH="js/json.js"
-
-          # New content for the file
-          NEW_CONTENT="console.log('Hello, World!');"
-
-          # Replace the content in the file
-          echo "$NEW_CONTENT" > "$FILE_PATH"
-
-      - name: Commit changes
-        run: |
-          git add .
-          git commit -m "Update file content"
-
-      - name: Pull latest changes from remote (using rebase strategy)
-        run: git pull --rebase origin update-file-content
-
-      - name: Push changes to the new branch
-        run: git push origin update-file-content
+          # Generate the timestamp in the desired format
+          TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
+          # Create the content with the timestamp
+          NEW_CONTENT="$TIMESTAMP\n$(cat js/json.js)"
+          # Update the file with the new content
+          echo "$NEW_CONTENT" > js/json.js
+          # Commit and push the changes back to the repository
+          git config --global user.name "timmit147"
+          git config --global user.email "timmeeuwsen@hotmail.nl"
+          git add js/json.js
+          git commit -m "Update file with timestamp"
+          git push origin main
