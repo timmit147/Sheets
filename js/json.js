@@ -609,12 +609,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "title"
+                    "stringValue": "Title"
                   },
                   "effectiveValue": {
-                    "stringValue": "title"
+                    "stringValue": "Title"
                   },
-                  "formattedValue": "title",
+                  "formattedValue": "Title",
                   "userEnteredFormat": {
                     "textFormat": {
                       "foregroundColor": {
