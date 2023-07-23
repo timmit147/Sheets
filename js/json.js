@@ -931,7 +931,8 @@
                       "link": {
                         "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                       }
-                    }
+                    },
+                    "hyperlinkDisplayType": "LINKED"
                   },
                   "effectiveFormat": {
                     "backgroundColor": {
