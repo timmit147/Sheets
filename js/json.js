@@ -608,7 +608,7 @@
                 },
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=IMAGE(\"https://example.com/image.jpg\")"
+                    "formulaValue": "=IMAGE(\"https://drive.google.com/file/d/1S_I1UMTPzBJHDci_m3kLt8Dok3owMKdt/view?usp=drive_link\")"
                   },
                   "effectiveValue": {},
                   "effectiveFormat": {
