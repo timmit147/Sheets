@@ -1235,9 +1235,15 @@
                 {},
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=IMAGE(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\")"
+                    "formulaValue": "=IMAGE(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\", 1)"
                   },
-                  "effectiveValue": {},
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "ERROR",
+                      "message": "Formula parse error."
+                    }
+                  },
+                  "formattedValue": "#ERROR!",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1250,7 +1256,7 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
+                    "horizontalAlignment": "CENTER",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
@@ -1373,9 +1379,15 @@
                 },
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=IMAGE(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\")"
+                    "formulaValue": "=IMAGE(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\", 1, 200, 100)"
                   },
-                  "effectiveValue": {},
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "ERROR",
+                      "message": "Formula parse error."
+                    }
+                  },
+                  "formattedValue": "#ERROR!",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1388,7 +1400,56 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
+                    "horizontalAlignment": "CENTER",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {},
+                {
+                  "userEnteredValue": {
+                    "formulaValue": "=IMAGE(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\", 1)"
+                  },
+                  "effectiveValue": {
+                    "errorValue": {
+                      "type": "ERROR",
+                      "message": "Formula parse error."
+                    }
+                  },
+                  "formattedValue": "#ERROR!",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "CENTER",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
