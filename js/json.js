@@ -430,12 +430,12 @@
                 {},
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\";)"
+                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d/=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\";)"
                   },
                   "effectiveValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                    "stringValue": "https://drive.google.com/file/d/=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                   },
-                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
+                  "formattedValue": "https://drive.google.com/file/d/=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -471,7 +471,7 @@
                         }
                       },
                       "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                        "uri": "https://drive.google.com/file/d/=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                       }
                     },
                     "hyperlinkDisplayType": "LINKED",
@@ -483,7 +483,7 @@
                       }
                     }
                   },
-                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  "hyperlink": "https://drive.google.com/file/d/=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                 }
               ]
             },
