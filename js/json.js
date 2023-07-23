@@ -560,7 +560,7 @@
                 {},
                 {
                   "userEnteredValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\")"
                   },
                   "effectiveValue": {
                     "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
