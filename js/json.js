@@ -608,12 +608,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "hello pizza"
+                    "stringValue": "Test"
                   },
                   "effectiveValue": {
-                    "stringValue": "hello pizza"
+                    "stringValue": "Test"
                   },
-                  "formattedValue": "hello pizza",
+                  "formattedValue": "Test",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1008,13 +1008,6 @@
               "values": [
                 {},
                 {
-                  "userEnteredValue": {
-                    "stringValue": "test"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "test"
-                  },
-                  "formattedValue": "test",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1027,7 +1020,6 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
@@ -1042,7 +1034,6 @@
                         "rgbColor": {}
                       }
                     },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
