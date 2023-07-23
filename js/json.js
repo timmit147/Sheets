@@ -607,6 +607,8 @@
                   }
                 },
                 {
+                  "userEnteredValue": {},
+                  "effectiveValue": {},
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -619,6 +621,7 @@
                       "bottom": 2,
                       "left": 3
                     },
+                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
@@ -633,6 +636,7 @@
                         "rgbColor": {}
                       }
                     },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
