@@ -608,12 +608,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "hello"
+                    "stringValue": "hello pizza"
                   },
                   "effectiveValue": {
-                    "stringValue": "hello"
+                    "stringValue": "hello pizza"
                   },
-                  "formattedValue": "hello",
+                  "formattedValue": "hello pizza",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
