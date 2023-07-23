@@ -1,7 +1,7 @@
 {
   "spreadsheetId": "1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4",
   "properties": {
-    "title": "Untitled spreadsheet",
+    "title": "github",
     "locale": "nl_NL",
     "autoRecalc": "ON_CHANGE",
     "timeZone": "America/Los_Angeles",
@@ -237,43 +237,6 @@
                       }
                     }
                   }
-                },
-                {},
-                {
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
                 }
               ]
             },
@@ -462,6 +425,44 @@
                       }
                     }
                   }
+                },
+                {},
+                {},
+                {
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -514,12 +515,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "test"
+                    "stringValue": "test hallo"
                   },
                   "effectiveValue": {
-                    "stringValue": "test"
+                    "stringValue": "test hallo"
                   },
-                  "formattedValue": "test",
+                  "formattedValue": "test hallo",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -608,12 +609,30 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Moon title"
+                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/\"; IMAGE(\"https://lh3.google.com/u/0/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww\"))"
                   },
-                  "effectiveValue": {
-                    "stringValue": "Moon title"
+                  "effectiveValue": {},
+                  "userEnteredFormat": {
+                    "textFormat": {
+                      "foregroundColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      },
+                      "underline": true,
+                      "foregroundColorStyle": {
+                        "rgbColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        }
+                      },
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/"
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED"
                   },
-                  "formattedValue": "Moon title",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -630,18 +649,29 @@
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
-                      "foregroundColor": {},
+                      "foregroundColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      },
                       "fontFamily": "Arial",
                       "fontSize": 10,
                       "bold": false,
                       "italic": false,
                       "strikethrough": false,
-                      "underline": false,
+                      "underline": true,
                       "foregroundColorStyle": {
-                        "rgbColor": {}
+                        "rgbColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        }
+                      },
+                      "link": {
+                        "uri": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/"
                       }
                     },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "hyperlinkDisplayType": "LINKED",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
@@ -650,15 +680,7 @@
                       }
                     }
                   },
-                  "textFormatRuns": [
-                    {
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 4,
-                      "format": {}
-                    }
-                  ],
+                  "hyperlink": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/",
                   "dataValidation": {
                     "condition": {
                       "type": "TEXT_NOT_CONTAINS",
@@ -789,6 +811,86 @@
                       "format": {}
                     }
                   ]
+                },
+                {
+                  "userEnteredFormat": {
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredFormat": {
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -1010,10 +1112,143 @@
                       }
                     }
                   ]
+                },
+                {
+                  "userEnteredFormat": {
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
                 }
               ]
             },
-            {},
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
+                    "stringValue": "blockContent"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "blockContent"
+                  },
+                  "formattedValue": "blockContent",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "test"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "test"
+                  },
+                  "formattedValue": "test",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
             {
               "values": [
                 {},
