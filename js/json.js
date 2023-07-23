@@ -467,30 +467,9 @@
                 {},
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/\"; IMAGE(\"https://lh3.google.com/u/0/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww\"))"
+                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\"; IMAGE(\"https://drive.google.com/uc?id=null&export=download\"))"
                   },
                   "effectiveValue": {},
-                  "userEnteredFormat": {
-                    "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
-                      "underline": true,
-                      "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      },
-                      "link": {
-                        "uri": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/"
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -526,7 +505,7 @@
                         }
                       },
                       "link": {
-                        "uri": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/"
+                        "uri": "https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                       }
                     },
                     "hyperlinkDisplayType": "LINKED",
@@ -538,18 +517,7 @@
                       }
                     }
                   },
-                  "hyperlink": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/",
-                  "dataValidation": {
-                    "condition": {
-                      "type": "TEXT_NOT_CONTAINS",
-                      "values": [
-                        {
-                          "userEnteredValue": "null"
-                        }
-                      ]
-                    },
-                    "inputMessage": "Enter the title"
-                  }
+                  "hyperlink": "https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                 }
               ]
             },
