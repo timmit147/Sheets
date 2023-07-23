@@ -1008,12 +1008,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockImage"
+                    "stringValue": "blockContent"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockImage"
+                    "stringValue": "blockContent"
                   },
-                  "formattedValue": "blockImage",
+                  "formattedValue": "blockContent",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
