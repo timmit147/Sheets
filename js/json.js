@@ -607,7 +607,9 @@
                   }
                 },
                 {
-                  "userEnteredValue": {},
+                  "userEnteredValue": {
+                    "formulaValue": "=IMAGE(\"https://example.com/image.jpg\")"
+                  },
                   "effectiveValue": {},
                   "effectiveFormat": {
                     "backgroundColor": {
