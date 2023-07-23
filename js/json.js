@@ -813,19 +813,9 @@
                 },
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\")"
+                    "formulaValue": "=IMAGE(\"https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\")"
                   },
-                  "effectiveValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                  },
-                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
-                  "userEnteredFormat": {
-                    "textFormat": {
-                      "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                      }
-                    }
-                  },
+                  "effectiveValue": {},
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -842,29 +832,18 @@
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
+                      "foregroundColor": {},
                       "fontFamily": "Arial",
                       "fontSize": 10,
                       "bold": false,
                       "italic": false,
                       "strikethrough": false,
-                      "underline": true,
+                      "underline": false,
                       "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      },
-                      "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                        "rgbColor": {}
                       }
                     },
-                    "hyperlinkDisplayType": "LINKED",
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
@@ -872,8 +851,7 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  }
                 }
               ]
             },
