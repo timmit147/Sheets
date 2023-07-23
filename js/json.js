@@ -1,7 +1,7 @@
 {
   "spreadsheetId": "1XTPqQhuETtk8WFFS6IN2q9HRmQPdyFQe5pF5fs1zji4",
   "properties": {
-    "title": "Untitled spreadsheet",
+    "title": "github",
     "locale": "nl_NL",
     "autoRecalc": "ON_CHANGE",
     "timeZone": "America/Los_Angeles",
@@ -608,12 +608,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Test test"
+                    "stringValue": "hello"
                   },
                   "effectiveValue": {
-                    "stringValue": "Test test"
+                    "stringValue": "hello"
                   },
-                  "formattedValue": "Test test",
+                  "formattedValue": "hello",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1004,7 +1004,56 @@
                 }
               ]
             },
-            {},
+            {
+              "values": [
+                {},
+                {
+                  "userEnteredValue": {
+                    "stringValue": "test"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "test"
+                  },
+                  "formattedValue": "test",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                }
+              ]
+            },
             {
               "values": [
                 {},
