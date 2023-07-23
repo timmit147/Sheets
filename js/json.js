@@ -608,12 +608,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Moon title"
+                    "stringValue": "Test"
                   },
                   "effectiveValue": {
-                    "stringValue": "Moon title"
+                    "stringValue": "Test"
                   },
-                  "formattedValue": "Moon title",
+                  "formattedValue": "Test",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -650,15 +650,6 @@
                       }
                     }
                   },
-                  "textFormatRuns": [
-                    {
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 4,
-                      "format": {}
-                    }
-                  ],
                   "dataValidation": {
                     "condition": {
                       "type": "TEXT_NOT_CONTAINS",
