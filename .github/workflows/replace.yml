@@ -1,8 +1,8 @@
 name: Update File with Fetched JSON
+
 on:
-  push:
-    branches:
-      - main
+  repository_dispatch:
+    types: update_sheets_data
 
 jobs:
   update_file_with_json:
