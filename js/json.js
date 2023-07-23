@@ -609,30 +609,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Title"
+                    "stringValue": "title"
                   },
                   "effectiveValue": {
-                    "stringValue": "Title"
+                    "stringValue": "title"
                   },
-                  "formattedValue": "Title",
-                  "userEnteredFormat": {
-                    "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
-                      "underline": true,
-                      "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
+                  "formattedValue": "title",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -649,26 +631,18 @@
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
+                      "foregroundColor": {},
                       "fontFamily": "Arial",
                       "fontSize": 10,
                       "bold": false,
                       "italic": false,
                       "strikethrough": false,
-                      "underline": true,
+                      "underline": false,
                       "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
+                        "rgbColor": {}
                       }
                     },
-                    "hyperlinkDisplayType": "LINKED",
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
@@ -676,17 +650,6 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "dataValidation": {
-                    "condition": {
-                      "type": "TEXT_NOT_CONTAINS",
-                      "values": [
-                        {
-                          "userEnteredValue": "null"
-                        }
-                      ]
-                    },
-                    "inputMessage": "Enter the title"
                   }
                 },
                 {
