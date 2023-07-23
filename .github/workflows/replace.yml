@@ -17,9 +17,8 @@ jobs:
           SPREADSHEET_ID: ${{ secrets.SPREADSHEETID }}
           API_KEY: ${{ secrets.APIKEY }}
         run: |
-          # Add a timestamp as a cache-busting query parameter
-          TIMESTAMP=$(date +%s)
-          curl -s -o fetchedData.json "https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?includeGridData=true&key=${API_KEY}&timestamp=${TIMESTAMP}"
+          # Fetch JSON data using curl
+          curl -s -o fetchedData.json "https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}?includeGridData=true&key=${API_KEY}"
           
       - name: Set up Node.js
         uses: actions/setup-node@v2
