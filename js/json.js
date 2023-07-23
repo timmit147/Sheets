@@ -608,12 +608,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Test"
+                    "stringValue": "Test test"
                   },
                   "effectiveValue": {
-                    "stringValue": "Test"
+                    "stringValue": "Test test"
                   },
-                  "formattedValue": "Test",
+                  "formattedValue": "Test test",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
