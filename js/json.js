@@ -467,7 +467,7 @@
                 {},
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download\"; IMAGE(\"https://drive.google.com/uc?id=null&export=download\"))"
+                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww\"; IMAGE(\"https://drive.google.com/uc?id=null&export=download\"))"
                   },
                   "effectiveValue": {},
                   "effectiveFormat": {
@@ -505,7 +505,7 @@
                         }
                       },
                       "link": {
-                        "uri": "https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                        "uri": "https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww"
                       }
                     },
                     "hyperlinkDisplayType": "LINKED",
@@ -517,7 +517,7 @@
                       }
                     }
                   },
-                  "hyperlink": "https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  "hyperlink": "https://drive.google.com/file/d=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww"
                 }
               ]
             },
