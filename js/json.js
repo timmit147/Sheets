@@ -609,12 +609,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Pizza"
+                    "stringValue": "Apple"
                   },
                   "effectiveValue": {
-                    "stringValue": "Pizza"
+                    "stringValue": "Apple"
                   },
-                  "formattedValue": "Pizza",
+                  "formattedValue": "Apple",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
