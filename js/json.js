@@ -1368,6 +1368,13 @@
                   }
                 },
                 {
+                  "userEnteredValue": {
+                    "stringValue": "funtion"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "funtion"
+                  },
+                  "formattedValue": "funtion",
                   "userEnteredFormat": {
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -1387,6 +1394,7 @@
                       "bottom": 2,
                       "left": 3
                     },
+                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "CLIP",
                     "textFormat": {
