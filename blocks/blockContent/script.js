@@ -7,5 +7,3 @@ h1Element.innerHTML = data[1];
 
 const pElement = document.querySelector(`#${data[0]} p`);
 pElement.innerHTML = data[2];
-
-console.log(data[2]);

@@ -99,7 +99,6 @@ function jsonCleanup(response) {
   }
 
   createDivsFromBlocks(jsonData);
-  console.log(jsonData);
 }
 
 function fetchSheetAsJSON() {
