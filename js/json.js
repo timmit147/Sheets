@@ -609,12 +609,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Rocket title"
+                    "stringValue": "Pizza"
                   },
                   "effectiveValue": {
-                    "stringValue": "Rocket title"
+                    "stringValue": "Pizza"
                   },
-                  "formattedValue": "Rocket title",
+                  "formattedValue": "Pizza",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
