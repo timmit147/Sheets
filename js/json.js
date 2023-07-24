@@ -609,30 +609,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "formulaValue": "=HYPERLINK(\"https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/\"; IMAGE(\"https://lh3.google.com/u/0/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww\"))"
+                    "stringValue": "title"
                   },
-                  "effectiveValue": {},
-                  "userEnteredFormat": {
-                    "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
-                      "underline": true,
-                      "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      },
-                      "link": {
-                        "uri": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/"
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED"
+                  "effectiveValue": {
+                    "stringValue": "title"
                   },
+                  "formattedValue": "title",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -649,29 +631,18 @@
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
+                      "foregroundColor": {},
                       "fontFamily": "Arial",
                       "fontSize": 10,
                       "bold": false,
                       "italic": false,
                       "strikethrough": false,
-                      "underline": true,
+                      "underline": false,
                       "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      },
-                      "link": {
-                        "uri": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/"
+                        "rgbColor": {}
                       }
                     },
-                    "hyperlinkDisplayType": "LINKED",
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
@@ -679,18 +650,6 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "hyperlink": "https://drive.google.com/file/d/1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww/",
-                  "dataValidation": {
-                    "condition": {
-                      "type": "TEXT_NOT_CONTAINS",
-                      "values": [
-                        {
-                          "userEnteredValue": "null"
-                        }
-                      ]
-                    },
-                    "inputMessage": "Enter the title"
                   }
                 },
                 {
@@ -813,7 +772,19 @@
                   ]
                 },
                 {
+                  "userEnteredValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  },
+                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
                   "userEnteredFormat": {
+                    "textFormat": {
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                      }
+                    },
                     "hyperlinkDisplayType": "LINKED"
                   },
                   "effectiveFormat": {
@@ -828,18 +799,30 @@
                       "bottom": 2,
                       "left": 3
                     },
+                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
-                      "foregroundColor": {},
+                      "foregroundColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      },
                       "fontFamily": "Arial",
                       "fontSize": 10,
                       "bold": false,
                       "italic": false,
                       "strikethrough": false,
-                      "underline": false,
+                      "underline": true,
                       "foregroundColorStyle": {
-                        "rgbColor": {}
+                        "rgbColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        }
+                      },
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                       }
                     },
                     "hyperlinkDisplayType": "LINKED",
@@ -850,7 +833,8 @@
                         "blue": 1
                       }
                     }
-                  }
+                  },
+                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
                 },
                 {
                   "userEnteredFormat": {
@@ -1114,7 +1098,19 @@
                   ]
                 },
                 {
+                  "userEnteredValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1G7L_8CoYGHF9W7IbUVHtGj10-a48Zqg7&export=download"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1G7L_8CoYGHF9W7IbUVHtGj10-a48Zqg7&export=download"
+                  },
+                  "formattedValue": "https://drive.google.com/uc?id=1G7L_8CoYGHF9W7IbUVHtGj10-a48Zqg7&export=download",
                   "userEnteredFormat": {
+                    "textFormat": {
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1G7L_8CoYGHF9W7IbUVHtGj10-a48Zqg7&export=download"
+                      }
+                    },
                     "hyperlinkDisplayType": "LINKED"
                   },
                   "effectiveFormat": {
@@ -1129,18 +1125,30 @@
                       "bottom": 2,
                       "left": 3
                     },
+                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
-                      "foregroundColor": {},
+                      "foregroundColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      },
                       "fontFamily": "Arial",
                       "fontSize": 10,
                       "bold": false,
                       "italic": false,
                       "strikethrough": false,
-                      "underline": false,
+                      "underline": true,
                       "foregroundColorStyle": {
-                        "rgbColor": {}
+                        "rgbColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        }
+                      },
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1G7L_8CoYGHF9W7IbUVHtGj10-a48Zqg7&export=download"
                       }
                     },
                     "hyperlinkDisplayType": "LINKED",
@@ -1151,7 +1159,8 @@
                         "blue": 1
                       }
                     }
-                  }
+                  },
+                  "hyperlink": "https://drive.google.com/uc?id=1G7L_8CoYGHF9W7IbUVHtGj10-a48Zqg7&export=download"
                 }
               ]
             },
