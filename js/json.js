@@ -609,12 +609,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "title"
+                    "stringValue": "Rocket title"
                   },
                   "effectiveValue": {
-                    "stringValue": "title"
+                    "stringValue": "Rocket title"
                   },
-                  "formattedValue": "title",
+                  "formattedValue": "Rocket title",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -969,15 +969,6 @@
                       }
                     }
                   },
-                  "textFormatRuns": [
-                    {
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 4,
-                      "format": {}
-                    }
-                  ],
                   "dataValidation": {
                     "condition": {
                       "type": "TEXT_NOT_CONTAINS",
