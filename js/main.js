@@ -103,9 +103,11 @@ function jsonCleanup(response) {
 }
 
 function fetchSheetAsJSON() {
-  var jsonUrl = 'js/json.js';
+  var jsonUrl = 'js/json.js?version=' + Date.now(); // Add a unique query parameter
 
-  fetch(jsonUrl)
+  fetch(jsonUrl, {
+    cache: 'no-store' // This prevents caching for the fetched resource
+  })
     .then(function(response) {
       if (!response.ok) {
         throw new Error('Failed to fetch JSON data');
@@ -196,17 +198,6 @@ function runScriptFromFile(fileUrl, propertyName, hoofdpagina) {
       console.error('Error fetching and executing script:', error);
     });
 }
-
-fetch('js/json.js', {
-  cache: 'no-store' // This prevents caching for the fetched resource
-})
-.then(response => response.text())
-.then(data => {
-  // Handle the fetched data
-})
-.catch(error => {
-  // Handle errors
-});
 
 fetchSheetAsJSON();
   
