@@ -197,6 +197,16 @@ function runScriptFromFile(fileUrl, propertyName, hoofdpagina) {
     });
 }
 
+fetch('js/json.js', {
+  cache: 'no-store' // This prevents caching for the fetched resource
+})
+.then(response => response.text())
+.then(data => {
+  // Handle the fetched data
+})
+.catch(error => {
+  // Handle errors
+});
 
 fetchSheetAsJSON();
   
