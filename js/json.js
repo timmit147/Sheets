@@ -564,12 +564,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockContent"
+                    "stringValue": "blockFooter"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockContent"
+                    "stringValue": "blockFooter"
                   },
-                  "formattedValue": "blockContent",
+                  "formattedValue": "blockFooter",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -702,74 +702,7 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "textFormatRuns": [
-                    {
-                      "format": {
-                        "foregroundColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        },
-                        "bold": true,
-                        "underline": true,
-                        "foregroundColorStyle": {
-                          "rgbColor": {
-                            "red": 0.06666667,
-                            "green": 0.33333334,
-                            "blue": 0.8
-                          }
-                        },
-                        "link": {
-                          "uri": "https://www.google.nl/"
-                        }
-                      }
-                    },
-                    {
-                      "startIndex": 5,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 9,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 14,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 27,
-                      "format": {
-                        "bold": true
-                      }
-                    },
-                    {
-                      "startIndex": 36,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 43,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 51,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 61,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 67,
-                      "format": {}
-                    }
-                  ]
+                  }
                 },
                 {
                   "userEnteredFormat": {
@@ -1342,12 +1275,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockContent"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockContent"
                   },
-                  "formattedValue": "blockTeams",
+                  "formattedValue": "blockContent",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1499,12 +1432,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockFooter"
+                    "stringValue": "blockTeams"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockFooter"
+                    "stringValue": "blockTeams"
                   },
-                  "formattedValue": "blockFooter",
+                  "formattedValue": "blockTeams",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
