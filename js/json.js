@@ -857,12 +857,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockFooter"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockFooter"
                   },
-                  "formattedValue": "blockTeams",
+                  "formattedValue": "blockFooter",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1490,51 +1490,7 @@
             },
             {
               "values": [
-                {
-                  "userEnteredValue": {
-                    "stringValue": "blockFooter"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "blockFooter"
-                  },
-                  "formattedValue": "blockFooter",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
+                {},
                 {
                   "userEnteredValue": {
                     "stringValue": "test"
