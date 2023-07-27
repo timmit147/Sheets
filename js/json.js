@@ -564,6 +564,464 @@
               "values": [
                 {
                   "userEnteredValue": {
+                    "stringValue": "blockTeams"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "blockTeams"
+                  },
+                  "formattedValue": "blockTeams",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Hallo world"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Hallo world"
+                  },
+                  "formattedValue": "Hallo world",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "funtion"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "funtion"
+                  },
+                  "formattedValue": "funtion",
+                  "userEnteredFormat": {
+                    "wrapStrategy": "CLIP",
+                    "textFormat": {
+                      "underline": false
+                    },
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "CLIP",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
+                  },
+                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
+                  "userEnteredFormat": {
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  },
+                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
+                  "userEnteredFormat": {
+                    "textFormat": {
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      },
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": true,
+                      "foregroundColorStyle": {
+                        "rgbColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        }
+                      },
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  },
+                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Jack"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Jack"
+                  },
+                  "formattedValue": "Jack",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "funtion2"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "funtion2"
+                  },
+                  "formattedValue": "funtion2",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
+                  },
+                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  },
+                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
+                  "userEnteredFormat": {
+                    "textFormat": {
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                      }
+                    }
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {
+                        "red": 0.06666667,
+                        "green": 0.33333334,
+                        "blue": 0.8
+                      },
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": true,
+                      "foregroundColorStyle": {
+                        "rgbColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        }
+                      },
+                      "link": {
+                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  },
+                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "userEnteredValue": {
                     "stringValue": "blockContent"
                   },
                   "effectiveValue": {
@@ -650,6 +1108,17 @@
                         "blue": 1
                       }
                     }
+                  },
+                  "dataValidation": {
+                    "condition": {
+                      "type": "TEXT_NOT_CONTAINS",
+                      "values": [
+                        {
+                          "userEnteredValue": "null"
+                        }
+                      ]
+                    },
+                    "inputMessage": "Enter the title"
                   }
                 },
                 {
@@ -702,77 +1171,14 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "textFormatRuns": [
-                    {
-                      "format": {
-                        "foregroundColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        },
-                        "bold": true,
-                        "underline": true,
-                        "foregroundColorStyle": {
-                          "rgbColor": {
-                            "red": 0.06666667,
-                            "green": 0.33333334,
-                            "blue": 0.8
-                          }
-                        },
-                        "link": {
-                          "uri": "https://www.google.nl/"
-                        }
-                      }
-                    },
-                    {
-                      "startIndex": 5,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 9,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 14,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 27,
-                      "format": {
-                        "bold": true
-                      }
-                    },
-                    {
-                      "startIndex": 36,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 43,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 51,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 61,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 67,
-                      "format": {}
-                    }
-                  ]
+                  }
                 },
                 {
                   "userEnteredFormat": {
+                    "wrapStrategy": "CLIP",
+                    "textFormat": {
+                      "underline": false
+                    },
                     "hyperlinkDisplayType": "LINKED"
                   },
                   "effectiveFormat": {
@@ -788,7 +1194,7 @@
                       "left": 3
                     },
                     "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
+                    "wrapStrategy": "CLIP",
                     "textFormat": {
                       "foregroundColor": {},
                       "fontFamily": "Arial",
@@ -813,6 +1219,7 @@
                 },
                 {
                   "userEnteredFormat": {
+                    "wrapStrategy": "CLIP",
                     "hyperlinkDisplayType": "LINKED"
                   },
                   "effectiveFormat": {
@@ -828,7 +1235,7 @@
                       "left": 3
                     },
                     "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
+                    "wrapStrategy": "CLIP",
                     "textFormat": {
                       "foregroundColor": {},
                       "fontFamily": "Arial",
@@ -850,64 +1257,8 @@
                       }
                     }
                   }
-                }
-              ]
-            },
-            {
-              "values": [
-                {
-                  "userEnteredValue": {
-                    "stringValue": "blockTeams"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "blockTeams"
-                  },
-                  "formattedValue": "blockTeams",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
                 },
                 {
-                  "userEnteredValue": {
-                    "stringValue": "Sara"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Sara"
-                  },
-                  "formattedValue": "Sara",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -920,7 +1271,6 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "OVERFLOW_CELL",
                     "textFormat": {
@@ -935,7 +1285,6 @@
                         "rgbColor": {}
                       }
                     },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
                     "backgroundColorStyle": {
                       "rgbColor": {
                         "red": 1,
@@ -957,13 +1306,6 @@
                   }
                 },
                 {
-                  "userEnteredValue": {
-                    "stringValue": "funtion"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "funtion"
-                  },
-                  "formattedValue": "funtion",
                   "userEnteredFormat": {
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -983,7 +1325,6 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -1009,13 +1350,6 @@
                   }
                 },
                 {
-                  "userEnteredValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
                   "userEnteredFormat": {
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -1035,248 +1369,6 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  },
-                  "textFormatRuns": [
-                    {
-                      "format": {
-                        "foregroundColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        },
-                        "bold": true,
-                        "underline": true,
-                        "foregroundColorStyle": {
-                          "rgbColor": {
-                            "red": 0.06666667,
-                            "green": 0.33333334,
-                            "blue": 0.8
-                          }
-                        },
-                        "link": {
-                          "uri": "https://www.google.nl/"
-                        }
-                      }
-                    },
-                    {
-                      "startIndex": 5,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 9,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 14,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 27,
-                      "format": {
-                        "bold": true
-                      }
-                    },
-                    {
-                      "startIndex": 36,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 43,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 51,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 61,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 67,
-                      "format": {}
-                    }
-                  ]
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                  },
-                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
-                  "userEnteredFormat": {
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": true,
-                      "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      },
-                      "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  },
-                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "Jack"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Jack"
-                  },
-                  "formattedValue": "Jack",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  },
-                  "dataValidation": {
-                    "condition": {
-                      "type": "TEXT_NOT_CONTAINS",
-                      "values": [
-                        {
-                          "userEnteredValue": "null"
-                        }
-                      ]
-                    },
-                    "inputMessage": "Enter the title"
-                  }
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "funtion2"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "funtion2"
-                  },
-                  "formattedValue": "funtion2",
-                  "userEnteredFormat": {
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "underline": false
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -1302,18 +1394,8 @@
                   }
                 },
                 {
-                  "userEnteredValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
                   "userEnteredFormat": {
                     "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "underline": false
-                    },
                     "hyperlinkDisplayType": "LINKED"
                   },
                   "effectiveFormat": {
@@ -1328,7 +1410,6 @@
                       "bottom": 2,
                       "left": 3
                     },
-                    "horizontalAlignment": "LEFT",
                     "verticalAlignment": "BOTTOM",
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -1351,140 +1432,7 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "textFormatRuns": [
-                    {
-                      "format": {
-                        "foregroundColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        },
-                        "bold": true,
-                        "underline": true,
-                        "foregroundColorStyle": {
-                          "rgbColor": {
-                            "red": 0.06666667,
-                            "green": 0.33333334,
-                            "blue": 0.8
-                          }
-                        },
-                        "link": {
-                          "uri": "https://www.google.nl/"
-                        }
-                      }
-                    },
-                    {
-                      "startIndex": 5,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 9,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 14,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 27,
-                      "format": {
-                        "bold": true
-                      }
-                    },
-                    {
-                      "startIndex": 36,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 43,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 51,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 61,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 67,
-                      "format": {}
-                    }
-                  ]
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                  },
-                  "formattedValue": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download",
-                  "userEnteredFormat": {
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "foregroundColor": {
-                        "red": 0.06666667,
-                        "green": 0.33333334,
-                        "blue": 0.8
-                      },
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": true,
-                      "foregroundColorStyle": {
-                        "rgbColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        }
-                      },
-                      "link": {
-                        "uri": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  },
-                  "hyperlink": "https://drive.google.com/uc?id=1JSd_laFUxyIFIJoQuZgMMq2zpN1KToww&export=download"
+                  }
                 }
               ]
             },
