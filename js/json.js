@@ -564,12 +564,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockContent"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockContent"
                   },
-                  "formattedValue": "blockTeams",
+                  "formattedValue": "blockContent",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -857,12 +857,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockContent"
+                    "stringValue": "blockTeams"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockContent"
+                    "stringValue": "blockTeams"
                   },
-                  "formattedValue": "blockContent",
+                  "formattedValue": "blockTeams",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
