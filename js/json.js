@@ -562,9 +562,215 @@
             },
             {
               "values": [
-                {},
-                {},
-                {},
+                {
+                  "userEnteredValue": {
+                    "stringValue": "blockContent"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "blockContent"
+                  },
+                  "formattedValue": "blockContent",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Apple"
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Apple"
+                  },
+                  "formattedValue": "Apple",
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "PLAIN_TEXT",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredValue": {
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
+                  },
+                  "effectiveValue": {
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
+                  },
+                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
+                  "userEnteredFormat": {
+                    "wrapStrategy": "CLIP",
+                    "textFormat": {
+                      "underline": false
+                    },
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "horizontalAlignment": "LEFT",
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "CLIP",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  },
+                  "textFormatRuns": [
+                    {
+                      "format": {
+                        "foregroundColor": {
+                          "red": 0.06666667,
+                          "green": 0.33333334,
+                          "blue": 0.8
+                        },
+                        "bold": true,
+                        "underline": true,
+                        "foregroundColorStyle": {
+                          "rgbColor": {
+                            "red": 0.06666667,
+                            "green": 0.33333334,
+                            "blue": 0.8
+                          }
+                        },
+                        "link": {
+                          "uri": "https://www.google.nl/"
+                        }
+                      }
+                    },
+                    {
+                      "startIndex": 5,
+                      "format": {}
+                    },
+                    {
+                      "startIndex": 9,
+                      "format": {
+                        "italic": true
+                      }
+                    },
+                    {
+                      "startIndex": 14,
+                      "format": {}
+                    },
+                    {
+                      "startIndex": 27,
+                      "format": {
+                        "bold": true
+                      }
+                    },
+                    {
+                      "startIndex": 36,
+                      "format": {}
+                    },
+                    {
+                      "startIndex": 43,
+                      "format": {
+                        "italic": true
+                      }
+                    },
+                    {
+                      "startIndex": 51,
+                      "format": {}
+                    },
+                    {
+                      "startIndex": 61,
+                      "format": {
+                        "italic": true
+                      }
+                    },
+                    {
+                      "startIndex": 67,
+                      "format": {}
+                    }
+                  ]
+                },
                 {
                   "userEnteredFormat": {
                     "hyperlinkDisplayType": "LINKED"
@@ -1427,219 +1633,6 @@
                       }
                     }
                   }
-                }
-              ]
-            },
-            {
-              "values": [
-                {
-                  "userEnteredValue": {
-                    "stringValue": "blockContent"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "blockContent"
-                  },
-                  "formattedValue": "blockContent",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "Apple"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Apple"
-                  },
-                  "formattedValue": "Apple",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
-                  "userEnteredFormat": {
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "underline": false
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  },
-                  "textFormatRuns": [
-                    {
-                      "format": {
-                        "foregroundColor": {
-                          "red": 0.06666667,
-                          "green": 0.33333334,
-                          "blue": 0.8
-                        },
-                        "bold": true,
-                        "underline": true,
-                        "foregroundColorStyle": {
-                          "rgbColor": {
-                            "red": 0.06666667,
-                            "green": 0.33333334,
-                            "blue": 0.8
-                          }
-                        },
-                        "link": {
-                          "uri": "https://www.google.nl/"
-                        }
-                      }
-                    },
-                    {
-                      "startIndex": 5,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 9,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 14,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 27,
-                      "format": {
-                        "bold": true
-                      }
-                    },
-                    {
-                      "startIndex": 36,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 43,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 51,
-                      "format": {}
-                    },
-                    {
-                      "startIndex": 61,
-                      "format": {
-                        "italic": true
-                      }
-                    },
-                    {
-                      "startIndex": 67,
-                      "format": {}
-                    }
-                  ]
                 }
               ]
             }
