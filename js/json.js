@@ -560,232 +560,7 @@
                 }
               ]
             },
-            {
-              "values": [
-                {
-                  "userEnteredValue": {
-                    "stringValue": "blockFooter"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "blockFooter"
-                  },
-                  "formattedValue": "blockFooter",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "Apple"
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Apple"
-                  },
-                  "formattedValue": "Apple",
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "PLAIN_TEXT",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
-                {
-                  "userEnteredValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "effectiveValue": {
-                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
-                  },
-                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
-                  "userEnteredFormat": {
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "underline": false
-                    },
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "horizontalAlignment": "LEFT",
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "CLIP",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
-                {
-                  "userEnteredFormat": {
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                },
-                {
-                  "userEnteredFormat": {
-                    "hyperlinkDisplayType": "LINKED"
-                  },
-                  "effectiveFormat": {
-                    "backgroundColor": {
-                      "red": 1,
-                      "green": 1,
-                      "blue": 1
-                    },
-                    "padding": {
-                      "top": 2,
-                      "right": 3,
-                      "bottom": 2,
-                      "left": 3
-                    },
-                    "verticalAlignment": "BOTTOM",
-                    "wrapStrategy": "OVERFLOW_CELL",
-                    "textFormat": {
-                      "foregroundColor": {},
-                      "fontFamily": "Arial",
-                      "fontSize": 10,
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "foregroundColorStyle": {
-                        "rgbColor": {}
-                      }
-                    },
-                    "hyperlinkDisplayType": "LINKED",
-                    "backgroundColorStyle": {
-                      "rgbColor": {
-                        "red": 1,
-                        "green": 1,
-                        "blue": 1
-                      }
-                    }
-                  }
-                }
-              ]
-            },
+            {},
             {
               "values": [
                 {},
@@ -1275,12 +1050,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockContent"
+                    "stringValue": "blockTeams"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockContent"
+                    "stringValue": "blockTeams"
                   },
-                  "formattedValue": "blockContent",
+                  "formattedValue": "blockTeams",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1320,12 +1095,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Sara"
+                    "stringValue": "Apple"
                   },
                   "effectiveValue": {
-                    "stringValue": "Sara"
+                    "stringValue": "Apple"
                   },
-                  "formattedValue": "Sara",
+                  "formattedValue": "Apple",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
@@ -1361,27 +1136,16 @@
                         "blue": 1
                       }
                     }
-                  },
-                  "dataValidation": {
-                    "condition": {
-                      "type": "TEXT_NOT_CONTAINS",
-                      "values": [
-                        {
-                          "userEnteredValue": "null"
-                        }
-                      ]
-                    },
-                    "inputMessage": "Enter the title"
                   }
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "funtion"
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
                   },
                   "effectiveValue": {
-                    "stringValue": "funtion"
+                    "stringValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."
                   },
-                  "formattedValue": "funtion",
+                  "formattedValue": "Even the test all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.",
                   "userEnteredFormat": {
                     "wrapStrategy": "CLIP",
                     "textFormat": {
@@ -1425,6 +1189,86 @@
                       }
                     }
                   }
+                },
+                {
+                  "userEnteredFormat": {
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
+                },
+                {
+                  "userEnteredFormat": {
+                    "hyperlinkDisplayType": "LINKED"
+                  },
+                  "effectiveFormat": {
+                    "backgroundColor": {
+                      "red": 1,
+                      "green": 1,
+                      "blue": 1
+                    },
+                    "padding": {
+                      "top": 2,
+                      "right": 3,
+                      "bottom": 2,
+                      "left": 3
+                    },
+                    "verticalAlignment": "BOTTOM",
+                    "wrapStrategy": "OVERFLOW_CELL",
+                    "textFormat": {
+                      "foregroundColor": {},
+                      "fontFamily": "Arial",
+                      "fontSize": 10,
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "foregroundColorStyle": {
+                        "rgbColor": {}
+                      }
+                    },
+                    "hyperlinkDisplayType": "LINKED",
+                    "backgroundColorStyle": {
+                      "rgbColor": {
+                        "red": 1,
+                        "green": 1,
+                        "blue": 1
+                      }
+                    }
+                  }
                 }
               ]
             },
@@ -1432,12 +1276,12 @@
               "values": [
                 {
                   "userEnteredValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockContent"
                   },
                   "effectiveValue": {
-                    "stringValue": "blockTeams"
+                    "stringValue": "blockContent"
                   },
-                  "formattedValue": "blockTeams",
+                  "formattedValue": "blockContent",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
