@@ -1067,12 +1067,12 @@
                 },
                 {
                   "userEnteredValue": {
-                    "stringValue": "Apple"
+                    "stringValue": "Title"
                   },
                   "effectiveValue": {
-                    "stringValue": "Apple"
+                    "stringValue": "Title"
                   },
-                  "formattedValue": "Apple",
+                  "formattedValue": "Title",
                   "effectiveFormat": {
                     "backgroundColor": {
                       "red": 1,
